@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-10_16-39-06",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nconst s string = \"constant\"\n\nfunc main() {\n\tfmt.Println(s)\n\n\tconst n = 500000000\n\n\tconst d = 3e20 / n\n\tfmt.Println(d)\n\n\tfmt.Println(int64(d))\n\n\tfmt.Println(math.Sin(n))\n}\n",
+            "lines": "21"
+        }
+    ]
+}

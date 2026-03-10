@@ -7,3 +7,10 @@
 2026-03-10 10:36:34, MOVE, v:1, k:ed@princesa, mode:PICK
 2026-03-10 10:39:35, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:7
 2026-03-10 10:39:47, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-10 16:13:03, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-10 16:13:36, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-10 16:14:08, MOVE, v:1, k:sandbox@user_001, mode:PICK
+2026-03-10 16:14:25, MOVE, v:1, k:sandbox@user_001, mode:BACK
+2026-03-10 16:38:57, MOVE, v:1, k:sandbox@user_001, mode:PICK
+2026-03-10 16:39:06, EXEC, v:1, k:sandbox@user_001, mode:FREE, size:21
+2026-03-10 16:39:15, MOVE, v:1, k:sandbox@user_001, mode:BACK
