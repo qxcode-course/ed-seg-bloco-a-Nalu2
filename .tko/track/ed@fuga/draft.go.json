@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-16_16-20-59",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar H, P, F, D int\n\tfmt.Scan(&H, &P, &F, &D)\n\tif D == -1 {\n\t\tfor i := 0; i < 16; i++ {\n\t\t\tF--\n\t\t\tif F < 0 {\n\t\t\t\tF = 15\n\t\t\t}\n\t\t\tif F == P {\n\t\t\t\tfmt.Println(\"N\")\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif F == H {\n\t\t\t\tfmt.Println(\"S\")\n\t\t\t\tbreak\n\t\t\t}\n\n\t\t}\n\t} else {\n\t\tfor i := 0; i < 16; i++ {\n\t\t\tF++\n\t\t\tif F > 15 {\n\t\t\t\tF = 0\n\t\t\t}\n\t\t\tif F == P {\n\t\t\t\tfmt.Println(\"N\")\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif F == H {\n\t\t\t\tfmt.Println(\"S\")\n\t\t\t\tbreak\n\t\t\t}\n\n\t\t}\n\n\t}\n}\n",
+            "lines": "42"
+        }
+    ]
+}
