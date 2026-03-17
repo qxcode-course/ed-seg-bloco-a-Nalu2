@@ -33,7 +33,7 @@ func main() {
 			result = append(result, qtd[i])
 		}
 	}
-	///o mapa tem [] inicio e fim, tenho que retirar para essa atividade, cara aqui terminou com uma cambiara ferrada
+	///o mapa tem [] inicio e fim, tenho que retirar para essa atividade, cara aqui terminou com uma cambiara ferrada, tenh que refazer depouis
 
 	for i := 0; i < len(result); i++ {
 		fmt.Print(result[i], " ")
