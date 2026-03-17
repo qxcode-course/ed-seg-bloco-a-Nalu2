@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-17_16-15-09",
+            "content": "@@ -241,310 +241,8 @@\n %09%7D%0A%0A\n-%09//aprendendo a usar mapa%0A%0A%09mapa := make(map%5Bint%5Dbool)%0A%0A%09for i := 0; i %3C ret; i++ %7B%0A%09%09mapa%5Bnum%5Bi%5D%5D = true%0A%09%7D%0A%0A%09//isso seria um novo slice com os valores filtrados%0A%0A%09result := %5B%5Dint%7B%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09if !mapa%5Bqtd%5Bi%5D%5D %7B // se nao ta no mapa mantem%0A%09%09%09result = append(result, qtd%5Bi%5D)%0A%09%09%7D%0A%09%7D%0A%0A\n %09fmt\n@@ -277,27 +277,6 @@\n td)%0A\n-%09fmt.Println(result)%0A\n %7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-17_16-34-39",
+            "content": "@@ -535,24 +535,60 @@\n i%5D)%0A%09%09%7D%0A%09%7D%0A%0A\n+%09fmt.Println(num)%0A%09fmt.Println(qtd)%0A\n %09fmt.Println\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-17_16-34-50",
+            "content": "@@ -542,116 +542,9 @@\n %0A%09%7D%0A\n-%09///o mapa tem %5B%5D inicio e fim, tenho que retirar para essa atividade%0A%0A%09for i := 0; i %3C len(result); i++ %7B%0A%09\n+%0A\n %09fmt\n@@ -562,20 +562,8 @@\n sult\n-%5Bi%5D, %22 %22)%0A%0A%09%7D\n+)\n %0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-17_16-37-19",
+            "content": "@@ -656,16 +656,18 @@\n mt.Print\n+ln\n (result%5B\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_16-37-39",
+            "content": "@@ -681,21 +681,6 @@\n %0A%09%7D%0A\n-%09fmt.Println()%0A\n %7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-17_16-38-03",
+            "content": "@@ -611,53 +611,8 @@\n dade\n-, cara aqui terminou com uma cambiara ferrada\n %0A%0A%09f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-17_16-38-24",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, ret int\n\tfmt.Scan(&n)\n\tvar qtd = make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&qtd[i])\n\t}\n\n\tfmt.Scan(&ret)\n\tvar num = make([]int, ret)\n\tfor i := 0; i < ret; i++ {\n\t\tfmt.Scan(&num[i])\n\t}\n\n\t//aprendendo a usar mapa\n\n\tmapa := make(map[int]bool)\n\n\tfor i := 0; i < ret; i++ {\n\t\tmapa[num[i]] = true\n\t}\n\n\t//isso seria um novo slice com os valores filtrados\n\n\tresult := []int{}\n\n\tfor i := 0; i < n; i++ {\n\t\tif !mapa[qtd[i]] { // se nao ta no mapa mantem\n\t\t\tresult = append(result, qtd[i])\n\t\t}\n\t}\n\t///o mapa tem [] inicio e fim, tenho que retirar para essa atividade, cara aqui terminou com uma cambiara ferrada\n\n\tfor i := 0; i < len(result); i++ {\n\t\tfmt.Print(result[i], \" \")\n\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "43"
+        }
+    ]
+}

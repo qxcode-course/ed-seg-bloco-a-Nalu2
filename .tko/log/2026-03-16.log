@@ -32,3 +32,6 @@
 2026-03-16 16:21:13, MOVE, v:1, k:ed@fuga, mode:PICK
 2026-03-16 16:21:39, SELF, v:1, k:ed@fuga, self:1, rate:100, study:40
 2026-03-16 16:21:40, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-16 16:23:55, MOVE, v:1, k:ed@pedra, mode:DOWN
+2026-03-16 16:23:55, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-16 16:28:39, MOVE, v:1, k:ed@pedra, mode:BACK
