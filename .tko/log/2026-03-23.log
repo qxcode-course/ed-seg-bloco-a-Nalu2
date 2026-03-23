@@ -14,3 +14,36 @@
 2026-03-23 11:06:07, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100, size:39
 2026-03-23 11:07:07, SELF, v:1, k:ed@pedra, self:1, rate:100, study:70, concept:1
 2026-03-23 11:07:08, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-03-23 11:08:09, MOVE, v:1, k:ed@casais, mode:DOWN
+2026-03-23 11:08:12, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-23 11:56:57, EXEC, v:1, k:ed@casais, mode:FULL, size:22, fail:COMP
+2026-03-23 11:57:19, EXEC, v:1, k:ed@casais, mode:FULL, rate:100, size:30
+2026-03-23 11:57:20, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-23 15:51:36, MOVE, v:1, k:ed@casais, mode:PICK
+2026-03-23 15:51:54, SELF, v:1, k:ed@casais, self:1, rate:100
+2026-03-23 15:51:54, MOVE, v:1, k:ed@casais, mode:BACK
+2026-03-23 15:56:51, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 15:56:57, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 15:59:53, MOVE, v:1, k:ed@baruel, mode:DOWN
+2026-03-23 16:02:45, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:02:54, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:03:04, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:09, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:22, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:04:22, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:23, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:04:24, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:28, SELF, v:1, k:ed@apagando, self:1, rate:100, study:40
+2026-03-23 16:04:29, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:04:31, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:41, SELF, v:1, k:ed@apagando, self:1, rate:100, study:40, concept:1, code:1
+2026-03-23 16:04:41, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:04:45, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:04:48, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:05:31, SELF, v:1, k:ed@apagando, self:1, rate:100, study:40, concept:1, debug:1
+2026-03-23 16:07:31, MOVE, v:1, k:ed@fuga, mode:PICK
+2026-03-23 16:07:46, MOVE, v:1, k:ed@fuga, mode:BACK
+2026-03-23 16:07:59, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-23 16:08:01, EXEC, v:1, k:ed@princesa, mode:FREE
+2026-03-23 16:08:21, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-23 16:08:32, MOVE, v:1, k:ed@princesa, mode:PICK

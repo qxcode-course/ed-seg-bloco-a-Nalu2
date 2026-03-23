@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_11-56-57",
+            "content": "@@ -282,286 +282,8 @@\n al%0A%0A\n-%09%09// Se o par j%C3%A1 estiver na lista de descasados%0A%09%09if descasados%5BparBuscado%5D %3E 0 %7B%0A%09%09%09totalCasais++%0A%09%09%09descasados%5BparBuscado%5D-- // Remove um animal da lista pois ele formou par%0A%09%09%7D else %7B%0A%09%09%09// Se n%C3%A3o tem par, esse animal entra para a lista de espera%0A%09%09%09descasados%5Banimal%5D++%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-23_11-57-19",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\t//ainda tenho dificuldade com map\n\tdescasados := make(map[int]int)\n\ttotalCasais := 0\n\n\tfor i := 0; i < n; i++ {\n\t\tvar animal int\n\t\tfmt.Scan(&animal)\n\n\t\t// O par de um animal 'x' \u00e9 sempre '-x'\n\t\tparBuscado := -animal\n\n\t\t// Se o par j\u00e1 estiver na lista de descasados\n\t\tif descasados[parBuscado] > 0 {\n\t\t\ttotalCasais++\n\t\t\tdescasados[parBuscado]-- // Remove um animal da lista pois ele formou par\n\t\t} else {\n\t\t\t// Se n\u00e3o tem par, esse animal entra para a lista de espera\n\t\t\tdescasados[animal]++\n\t\t}\n\t}\n\n\tfmt.Println(totalCasais)\n}\n",
+            "lines": "30"
+        }
+    ]
+}
