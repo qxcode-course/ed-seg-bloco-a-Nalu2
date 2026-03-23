@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-23_11-00-49",
+            "content": "@@ -99,17 +99,16 @@\n ificado%0A\n-%0A\n func mai\n@@ -118,393 +118,28 @@\n  %7B%0A%09\n-var n int%0A%09fmt.Scan(&n)%0A%0A%09vencedor := -1%0A%09minDiff := 101 // Valor maior que qualquer diferen%C3%A7a poss%C3%ADvel (m%C3%A1x 100)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09var a, b int%0A%09%09fmt.Scan(&a, &b)%0A%0A%09%09// ambas devem ter pelo menos 10m%0A%09%09if a %3E= 10 && b %3E= 10 %7B%0A%09%09%09dif := a - b%0A%09%09%09if dif %3C 0 %7B%0A%09%09%09%09dif = -dif%0A%09%09%09%7D%0A%0A%09%09%7D%0A%09%7D%0A%0A%09if vencedor == -1 %7B%0A%09%09fmt.Println(%22sem ganhador%22)%0A%09%7D else %7B%0A%09%09fmt.Println(vencedor)%0A%09%7D\n+fmt.Println(%22qxcode%22)\n %0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-23_11-00-57",
+            "content": "@@ -155,16 +155,89 @@\n or := -1\n+%0A%09minDiff := 101 // Valor maior que qualquer diferen%C3%A7a poss%C3%ADvel (m%C3%A1x 100)\n %0A%0A%09for i\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-23_11-01-17",
+            "content": "@@ -159,80 +159,8 @@\n = -1\n-%0A%09difmin := 101 // Valor maior que qualquer diferen%C3%A7a poss%C3%ADvel (m%C3%A1x 100)\n %0A%0A%09f\n@@ -337,222 +337,8 @@\n %09%7D%0A%0A\n-%09%09%09// Se for o primeiro competidor v%C3%A1lido ou tiver uma pontua%C3%A7%C3%A3o melhor%0A%09%09%09// O %22%3C%22 garante que, em caso de empate, o primeiro (menor %C3%ADndice) permane%C3%A7a%0A%09%09%09if vencedor == -1 %7C%7C dif %3C difmin %7B%0A%09%09%09%09difmin = dif%0A%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-23_11-02-21",
+            "content": "@@ -617,24 +617,8 @@\n dif%0A\n-%09%09%09%09vencedor = i\n %0A%09%09%09\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-23_11-06-07",
+            "content": "package main\n\nimport \"fmt\"\n\n// lan\u00e7amento da pedra deve ser acima de 10m, caso falhe sera desclassificado\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tvencedor := -1\n\tdifmin := 101 // Valor maior que qualquer diferen\u00e7a poss\u00edvel (m\u00e1x 100)\n\n\tfor i := 0; i < n; i++ {\n\t\tvar a, b int\n\t\tfmt.Scan(&a, &b)\n\n\t\t// ambas devem ter pelo menos 10m\n\t\tif a >= 10 && b >= 10 {\n\t\t\tdif := a - b\n\t\t\tif dif < 0 {\n\t\t\t\tdif = -dif\n\t\t\t}\n\n\t\t\t// Se for o primeiro competidor v\u00e1lido ou tiver uma pontua\u00e7\u00e3o melhor\n\t\t\t// O \"<\" garante que, em caso de empate, o primeiro (menor \u00edndice) permane\u00e7a\n\t\t\tif vencedor == -1 || dif < difmin {\n\t\t\t\tdifmin = dif\n\t\t\t\tvencedor = i\n\t\t\t}\n\t\t}\n\t}\n\n\tif vencedor == -1 {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfmt.Println(vencedor)\n\t}\n}\n",
+            "lines": "39"
+        }
+    ]
+}

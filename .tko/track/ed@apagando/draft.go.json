@@ -32,7 +32,12 @@
         },
         {
             "label": "2026-03-17_16-38-24",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, ret int\n\tfmt.Scan(&n)\n\tvar qtd = make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&qtd[i])\n\t}\n\n\tfmt.Scan(&ret)\n\tvar num = make([]int, ret)\n\tfor i := 0; i < ret; i++ {\n\t\tfmt.Scan(&num[i])\n\t}\n\n\t//aprendendo a usar mapa\n\n\tmapa := make(map[int]bool)\n\n\tfor i := 0; i < ret; i++ {\n\t\tmapa[num[i]] = true\n\t}\n\n\t//isso seria um novo slice com os valores filtrados\n\n\tresult := []int{}\n\n\tfor i := 0; i < n; i++ {\n\t\tif !mapa[qtd[i]] { // se nao ta no mapa mantem\n\t\t\tresult = append(result, qtd[i])\n\t\t}\n\t}\n\t///o mapa tem [] inicio e fim, tenho que retirar para essa atividade, cara aqui terminou com uma cambiara ferrada\n\n\tfor i := 0; i < len(result); i++ {\n\t\tfmt.Print(result[i], \" \")\n\n\t}\n\tfmt.Println()\n}\n",
+            "content": "@@ -656,34 +656,8 @@\n rada\n-, tenh que refazer depouis\n %0A%0A%09f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-17_16-43-08",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, ret int\n\tfmt.Scan(&n)\n\tvar qtd = make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&qtd[i])\n\t}\n\n\tfmt.Scan(&ret)\n\tvar num = make([]int, ret)\n\tfor i := 0; i < ret; i++ {\n\t\tfmt.Scan(&num[i])\n\t}\n\n\t//aprendendo a usar mapa\n\n\tmapa := make(map[int]bool)\n\n\tfor i := 0; i < ret; i++ {\n\t\tmapa[num[i]] = true\n\t}\n\n\t//isso seria um novo slice com os valores filtrados\n\n\tresult := []int{}\n\n\tfor i := 0; i < n; i++ {\n\t\tif !mapa[qtd[i]] { // se nao ta no mapa mantem\n\t\t\tresult = append(result, qtd[i])\n\t\t}\n\t}\n\t///o mapa tem [] inicio e fim, tenho que retirar para essa atividade, cara aqui terminou com uma cambiara ferrada, tenh que refazer depouis\n\n\tfor i := 0; i < len(result); i++ {\n\t\tfmt.Print(result[i], \" \")\n\n\t}\n\tfmt.Println()\n}\n",
             "lines": "43"
         }
     ]
