@@ -47,3 +47,11 @@
 2026-03-23 16:08:01, EXEC, v:1, k:ed@princesa, mode:FREE
 2026-03-23 16:08:21, MOVE, v:1, k:ed@princesa, mode:BACK
 2026-03-23 16:08:32, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-23 16:35:21, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-23 16:41:21, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-23 16:45:08, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-23 16:45:11, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-23 16:45:25, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-23 16:45:29, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-03-23 16:57:08, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-03-23 16:57:14, MOVE, v:1, k:ed@fuga, mode:PICK

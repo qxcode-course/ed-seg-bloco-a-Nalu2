@@ -12,10 +12,7 @@ sources:
   writeable: false
   quests: null
   tasks: null
-expanded:
-- ed@main-quest
-- ed@revisão
-- ed@análise
+expanded: []
 tasks:
   ed@pintando: '{self:1, rate:100, study:20, friend:nao, concept:1}'
   ed@mumia: '{self:1, rate:100, study:20, friend:nao}'
@@ -24,11 +21,11 @@ tasks:
   ed@casais: '{self:1, rate:100}'
   ed@apagando: '{self:1, rate:100, study:40, concept:1, debug:1}'
 flags:
-  painel: 1
-  quests: 0
-  tracks: 0
+  panel: 0
+  inbox: 0
+  show_panel: 0
   tasks: 0
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@princesa
+selected: sandbox@00_rascunhos
