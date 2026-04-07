@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-30_15-54-13",
+            "content": "@@ -190,402 +190,19 @@\n map%5B\n-int%5Dint)%0A    temRep := false%0A    priRep := true%0A%0A    //ler as figurinhas%0A    for i := 0; i %3C qtdP; i++ %7B%0A        var fig int%0A        fmt.Scan(&fig)%0A        //se valor for maior que 0, tem repetida%0A        if contagem%5Bfig%5D %3E 0 %7B%0A            if !priRep%7B%0A                fmt.print(%22%22)%0A            %7D%0A            fmt.print(fig)%0A            priRep = false%0A            temRep = true%0A        %7D%0A        \n+string%5Dint)\n %0A%0A%7D%0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-04-06_21-05-00",
+            "content": "@@ -580,57 +580,8 @@\n     \n-%7D%0A%0A    if !temRep %7B%0A        fmt.Print(%22N%22)%0A    %7D%0A\n     \n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-04-06_21-06-20",
+            "content": "@@ -454,25 +454,25 @@\n         fmt.\n-P\n+p\n rint(%22%22)%0A   \n@@ -494,25 +494,25 @@\n         fmt.\n-P\n+p\n rint(fig)%0A  \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_21-07-58",
+            "content": "@@ -580,38 +580,10 @@\n     \n-    contagem%5Bfig%5D++%0A    %7D%0A    \n+%7D%0A\n %0A   \n@@ -605,34 +605,32 @@\n        fmt.Print\n-ln\n (%22N%22)%0A    %7D%0A%0A   \n@@ -629,359 +629,12 @@\n   %7D%0A\n-%0A\n     \n-//quais faltam%0A%0A    temFalta := false%0A    priFalta := true%0A%0A    for i := 1; i %3C= qtdT; i++ %7B%0A        if contagem%5Bi%5D == 0 %7B%0A            if !priFalta%7B%0A                fmt.Print(%22%22)%0A            %7D%0A            fmt.Print(i)%0A            priFalta = false%0A            temFalta = true%0A        %7D%0A    %7D%0A%0A    if !temFalta %7B%0A        fmt.Println(%22N%22)%0A    %7D%0A%0A    \n+%0A\n %0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-04-06_21-13-14",
+            "content": "@@ -457,33 +457,32 @@\n      fmt.Print(%22\n- \n %22)%0A            %7D\n@@ -836,17 +836,16 @@\n .Print(%22\n- \n %22)%0A     \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-13-58",
+            "content": "@@ -835,18 +835,16 @@\n mt.Print\n-ln\n (%22 %22)%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-14-33",
+            "content": "@@ -878,18 +878,16 @@\n mt.Print\n-ln\n (i)%0A    \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-14-44",
+            "content": "@@ -504,18 +504,16 @@\n mt.Print\n-ln\n (fig)%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-15-03",
+            "content": "@@ -504,16 +504,18 @@\n mt.Print\n+ln\n (fig)%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-15-30",
+            "content": "@@ -659,29 +659,8 @@\n    %7D\n-%0A    fmt.Println(%22 %22)\n %0A%0A  \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-04-06_21-17-10",
+            "content": "@@ -673,16 +673,17 @@\n rintln(%22\n+ \n %22)%0A%0A    \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-06_21-17-26",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -634,32 +634,34 @@\n        fmt.Print\n+ln\n (%22N%22)%0A    %7D%0A    \n@@ -847,32 +847,34 @@\n        fmt.Print\n+ln\n (%22 %22)%0A          \n@@ -898,16 +898,18 @@\n mt.Print\n+ln\n (i)%0A    \n@@ -1014,16 +1014,18 @@\n mt.Print\n+ln\n (%22N%22)%0A  \n@@ -1027,36 +1027,16 @@\n %22)%0A    %7D\n-%0A    fmt.Println(%22%22)\n %0A%0A    %0A%7D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-04-06_21-20-12",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    //perfeito exemplo de utiliza\u00e7\u00e3o de map, foda que eu nao sei usar direito\n    var qtdT, qtdP int\n    fmt.Scan(&qtdT, &qtdP)\n    contagem := make(map[int]int)\n    temRep := false\n    priRep := true\n\n    //ler as figurinhas\n    for i := 0; i < qtdP; i++ {\n        var fig int\n        fmt.Scan(&fig)\n        //se valor for maior que 0, tem repetida\n        if contagem[fig] > 0 {\n            if !priRep{\n                fmt.Print(\" \")\n            }\n            fmt.Print(fig)\n            priRep = false\n            temRep = true\n        }\n        contagem[fig]++\n    }\n    \n    if !temRep {\n        fmt.Print(\"N\")\n    }\n    fmt.Println(\"\")\n\n    //quais faltam\n\n    temFalta := false\n    priFalta := true\n\n    for i := 1; i <= qtdT; i++ {\n        if contagem[i] == 0 {\n            if !priFalta{\n                fmt.Print(\" \")\n            }\n            fmt.Print(i)\n            priFalta = false\n            temFalta = true\n        }\n    }\n\n    if !temFalta {\n        fmt.Print(\"N\")\n    }\n    fmt.Println(\"\")\n\n    \n}\n",
+            "lines": "55"
+        }
+    ]
+}

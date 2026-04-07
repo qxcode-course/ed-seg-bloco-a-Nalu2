@@ -7,8 +7,33 @@
         },
         {
             "label": "2026-03-10_10-39-35",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"resultado aqui?\")\n}\n",
+            "content": "@@ -40,262 +40,36 @@\n  %7B%0A%09\n-var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09pessoas := make(%5B%5Dint, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09pessoas%5Bi%5D = i + 1%0A%09%7D%0A%09indEspa := e - 1%0A%0A%09for len(pessoas) %3E 0 %7B%0A%09%09fmt.Print(pessoas%5Bi%5D)%0A%09%09if i == indEspa %7B%0A%09%09%09fmt.Print(%22%3E%22)%0A%09%09%7D%0A%09%09fmt.Print(%22 %22)%0A%09%7D%0A%09fmt.Println(%22%5D\n+fmt.Println(%22resultado aqui?\n %22)%0A%7D\n",
             "lines": "7"
+        },
+        {
+            "label": "2026-04-06_21-58-13",
+            "content": "@@ -142,25 +142,24 @@\n  = i + 1%0A%09%7D%0A\n-%0A\n %09indEspa := \n@@ -279,10 +279,8 @@\n %0A%09%7D%0A\n-%09%0A\n %09fmt\n@@ -296,248 +296,7 @@\n %22%5D%22)\n-%0A%0A%09if len(pessoas) == 1 %7B%0A%09%09break%0A%09%7D%0A%0A%09indVit := (indEspa + 1) %25 len(pessoas)%0A%09//tirar a vitima do vetor%0A%09pessoas = append(pessoas%5B:indVit%5D, pessoas%5BindVit+1:%5D...)%0A%09if indVit %3C indEspa %7B%0A%09%09indEspa--%0A%09%7D%0A%09indEspa = (indEspa + 1) %25 len(pessoas)\n %0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-04-06_22-19-07",
+            "content": "@@ -172,38 +172,10 @@\n %0A%0A%09f\n-mt.Print(%22%5B%22)%0A%09for i := 0; i %3C\n+or\n  len\n@@ -183,21 +183,20 @@\n pessoas)\n-; i++\n+ %3E 0\n  %7B%0A%09%09fmt\n@@ -276,16 +276,17 @@\n %22 %22)%0A%09%7D%0A\n+%09\n %0A%09fmt.Pr\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-04-06_22-27-28",
+            "content": "@@ -170,18 +170,8 @@\n  1%0A%0A\n-%0A%09for %7B%0A%0A%09\n %09fmt\n@@ -182,17 +182,16 @@\n nt(%22%5B%22)%0A\n-%09\n %09for i :\n@@ -219,17 +219,16 @@\n ; i++ %7B%0A\n-%09\n %09%09fmt.Pr\n@@ -245,17 +245,16 @@\n s%5Bi%5D)%0A%09%09\n-%09\n if i == \n@@ -266,17 +266,16 @@\n pa %7B%0A%09%09%09\n-%09\n fmt.Prin\n@@ -285,16 +285,14 @@\n %3E%22)%0A\n-%09\n %09%09%7D%0A%09%09\n-%09\n fmt.\n@@ -302,22 +302,20 @@\n nt(%22 %22)%0A\n-%09\n %09%7D%0A%0A\n-%09\n %09fmt.Pri\n@@ -325,17 +325,16 @@\n n(%22%5D%22)%0A%0A\n-%09\n %09if len(\n@@ -355,21 +355,18 @@\n %7B%0A%09%09\n-%09\n break%0A\n-%09\n %09%7D%0A%0A\n-%09\n %09ind\n@@ -401,17 +401,16 @@\n essoas)%0A\n-%09\n %09//tirar\n@@ -428,17 +428,16 @@\n o vetor%0A\n-%09\n %09pessoas\n@@ -487,17 +487,16 @@\n 1:%5D...)%0A\n-%09\n %09if indV\n@@ -512,17 +512,16 @@\n spa %7B%0A%09%09\n-%09\n indEspa-\n@@ -522,21 +522,19 @@\n dEspa--%0A\n-%09\n %09%7D%0A\n-%09\n %09indEspa\n@@ -569,8 +569,6 @@\n as)%0A\n-%09\n %7D%0A\n-%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_22-30-17",
+            "content": "@@ -189,17 +189,16 @@\n Print(%22%5B\n- \n %22)%0A%09%09for\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-06_22-33-24",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tpessoas := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tpessoas[i] = i + 1\n\t}\n\n\tindEspa := e - 1\n\n\n\tfor {\n\n\t\tfmt.Print(\"[ \")\n\t\tfor i := 0; i < len(pessoas); i++ {\n\t\t\tfmt.Print(pessoas[i])\n\t\t\tif i == indEspa {\n\t\t\t\tfmt.Print(\">\")\n\t\t\t}\n\t\t\tfmt.Print(\" \")\n\t\t}\n\n\t\tfmt.Println(\"]\")\n\n\t\tif len(pessoas) == 1 {\n\t\t\tbreak\n\t\t}\n\n\t\tindVit := (indEspa + 1) % len(pessoas)\n\t\t//tirar a vitima do vetor\n\t\tpessoas = append(pessoas[:indVit], pessoas[indVit+1:]...)\n\t\tif indVit < indEspa {\n\t\t\tindEspa--\n\t\t}\n\t\tindEspa = (indEspa + 1) % len(pessoas)\n\t}\n}",
+            "lines": "43"
         }
     ]
 }

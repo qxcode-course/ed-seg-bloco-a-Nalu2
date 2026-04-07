@@ -2,30 +2,27 @@ version: '0.2'
 sources:
 - name: sandbox
   target: sandbox
+  index: README.md
   type: local
   writeable: true
   quests: null
   tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
-expanded: []
-tasks:
-  ed@pintando: '{self:1, rate:100, study:20, friend:nao, concept:1}'
-  ed@mumia: '{self:1, rate:100, study:20, friend:nao}'
-  ed@fuga: '{self:1, rate:100, study:40}'
-  ed@pedra: '{self:1, rate:100, study:70, concept:1}'
-  ed@casais: '{self:1, rate:100}'
-  ed@apagando: '{self:1, rate:100, study:40, concept:1, debug:1}'
+expanded:
+- ed@map_set
+- ed@basic
+- ed@rec
 flags:
-  panel: 0
-  inbox: 0
-  show_panel: 0
-  tasks: 0
-  task_graph_mode: 0
-  show_time: 0
+  inbox: all
+  panel: graph
+  show_panel: 'true'
+  task_graph_mode: executions
+  show_time: 'true'
 lang: go
-selected: sandbox@00_rascunhos
+selected: ed@gomos

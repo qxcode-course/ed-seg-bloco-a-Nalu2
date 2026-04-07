@@ -1,0 +1,23 @@
+2026-04-05 22:26:29, MOVE, v:1, k:ed@casais, mode:PICK
+2026-04-05 22:26:33, EXEC, v:1, k:ed@casais, mode:FREE
+2026-04-05 22:26:43, MOVE, v:1, k:ed@casais, mode:BACK
+2026-04-05 22:26:44, MOVE, v:1, k:ed@casais, mode:PICK
+2026-04-05 22:26:47, EXEC, v:1, k:ed@casais, mode:FREE
+2026-04-05 22:26:55, MOVE, v:1, k:ed@casais, mode:BACK
+2026-04-05 22:26:56, MOVE, v:1, k:ed@casais, mode:PICK
+2026-04-05 22:26:58, EXEC, v:1, k:ed@casais, mode:FULL, rate:100
+2026-04-05 22:27:56, SELF, v:1, k:ed@casais, self:1, rate:100, study:70, concept:1
+2026-04-05 22:27:57, MOVE, v:1, k:ed@casais, mode:BACK
+2026-04-05 22:27:58, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-04-05 22:28:01, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-04-05 22:28:57, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-04-05 22:29:00, EXEC, v:1, k:ed@baruel, mode:FREE
+2026-04-05 22:29:06, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-04-05 22:29:07, MOVE, v:1, k:ed@baruel, mode:PICK
+2026-04-05 22:32:24, MOVE, v:1, k:ed@baruel, mode:BACK
+2026-04-05 22:32:45, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-04-05 22:43:07, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-04-05 22:43:20, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-04-05 22:43:21, MOVE, v:1, k:ed@gomos, mode:BACK
+2026-04-05 22:43:22, MOVE, v:1, k:ed@gomos, mode:PICK
+2026-04-05 22:47:19, MOVE, v:1, k:ed@gomos, mode:BACK

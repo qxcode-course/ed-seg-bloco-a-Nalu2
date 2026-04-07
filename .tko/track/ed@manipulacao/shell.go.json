@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_10-08-04",
+            "content": "@@ -673,28 +673,16 @@\n bsJ%0A%09%7D)%0A\n-%09return res%0A\n %7D%0A%0Afunc \n@@ -713,110 +713,15 @@\n  %7B%0A%09\n-res := make(%5B%5Dint, len(vet))%0A%09for i, j := 0, len(vet)-1; j %3E= 0; i, j = i+1, j-1 %7B%0A%09%09res%5Bi%5D= vet%5Bj%5D%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -717,35 +717,35 @@\n _ = vet%0A%09return \n-res\n+nil\n %0A%7D%0A%0Afunc unique(\n@@ -768,157 +768,27 @@\n  %7B%0A%09\n-var res %5B%5Dint%0A%09exists := make(map%5Bint%5Dbool)%0A%09for _, x := range vet %7B%0A%09%09if !exists%5Bx%5D %7B%0A%09%09%09exists%5Bx%5D = true%0A%09%09%09res = append(res, x)%0A%09%09%7D%0A%09%7D%0A%09return res\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-04-07_11-30-52",
+            "content": "@@ -1062,254 +1062,27 @@\n  %7B%0A%09\n-count := make(map%5Bint%5Dint)%0A%09for _, x := range vet %7B%0A%09%09count%5Bx%5D++%0A%09%7D%0A%0A%09var res %5B%5Dint%0A%09for _, x := range vet %7B%0A%09%09if count%5Bx%5D %3E 1 %7B%0A%09%09%09res = append(res, x)%0A%09%09%09count%5Bx%5D = 0 // Evita adicionar o mesmo n%C3%BAmero repetido mais de uma vez%0A%09%09%7D%0A%09%7D%0A%09return res\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-04-07_11-32-36",
+            "content": "@@ -42,16 +42,8 @@\n os%22%0A\n-%09%22sort%22%0A\n %09%22st\n",
+            "lines": "149"
+        },
+        {
+            "label": "2026-04-07_11-33-21",
+            "content": "@@ -1070,50 +1070,91 @@\n  %7B%0A%09\n-var res %5B%5Dint%0A%09vistos := make(map%5Bint%5Dint)\n+count := make(map%5Bint%5Dint)%0A%09for _, x := range vet %7B%0A%09%09count%5Bx%5D++%0A%09%7D%0A%0A%09var res %5B%5Dint\n %0A%09fo\n@@ -1184,21 +1184,20 @@\n %09if \n-vistos\n+count\n %5Bx%5D %3E \n-0\n+1\n  %7B%0A%09\n@@ -1225,42 +1225,87 @@\n )%0A%09%09\n-%7D%0A%09%09vistos%5Bx%5D++%0A\n+%09count%5Bx%5D = 0 // Evita adicionar o mesmo n%C3%BAmero repetido mais de uma vez%0A%09\n %09%7D%0A%09\n-sort.Ints(res)\n+%7D\n %0A%09re\n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-04-07_11-36-08",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"sort\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc getMen(vet []int) []int {\n\tvar men []int\n\tfor _, x := range vet {\n\t\tif x > 0 {\n\t\t\tmen = append(men, x)\n\t\t}\n\t}\n\treturn men\n}\n\nfunc getCalmWomen(vet []int) []int {\n\tvar calm []int\n\tfor _, x := range vet {\n\t\tif x < 0 && x > -10 {\n\t\t\tcalm = append(calm, x)\n\t\t}\n\t}\n\treturn calm\n}\n\nfunc sortVet(vet []int) []int {\n\tres := append([]int{}, vet...)\n\tsort.Ints(res)\n\treturn res\t\n}\n\nfunc sortStress(vet []int) []int {\n\tres := append([]int{}, vet...)\n\tsort.Slice(res, func(i, j int) bool {\n\t\tabsI := res[i]\n\t\tif absI < 0 {\n\t\t\tabsI *= -1\n\t\t}\n\t\tabsJ := res[j]\n\t\tif absJ < 0 {\n\t\t\tabsJ *= -1\n\t\t}\n\t\treturn absI < absJ\n\t})\n\treturn res\n}\n\nfunc reverse(vet []int) []int {\n\tres := make([]int, len(vet))\n\tfor i, j := 0, len(vet)-1; j >= 0; i, j = i+1, j-1 {\n\t\tres[i]= vet[j]\n\t}\n\treturn res\n}\n\nfunc unique(vet []int) []int {\n\tvar res []int\n\texists := make(map[int]bool)\n\tfor _, x := range vet {\n\t\tif !exists[x] {\n\t\t\texists[x] = true\n\t\t\tres = append(res, x)\n\t\t}\n\t}\n\treturn res\n}\n\nfunc repeated(vet []int) []int {\n\tvar res []int\n\tvistos := make(map[int]int)\n\tfor _, x := range vet {\n\t\tif vistos[x] > 0 {\n\t\t\tres = append(res, x)\n\t\t}\n\t\tvistos[x]++\n\t}\n\tsort.Ints(res)\n\treturn res\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tfmt.Print(\"$\")\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"get_men\":\n\t\t\tprintVec(getMen(str2vet(args[1])))\n\t\tcase \"get_calm_women\":\n\t\t\tprintVec(getCalmWomen(str2vet(args[1])))\n\t\tcase \"sort\":\n\t\t\tprintVec(sortVet(str2vet(args[1])))\n\t\tcase \"sort_stress\":\n\t\t\tprintVec(sortStress(str2vet(args[1])))\n\t\tcase \"reverse\":\n\t\t\tarray := str2vet(args[1])\n\t\t\tother := reverse(array)\n\t\t\tprintVec(array)\n\t\t\tprintVec(other)\n\t\tcase \"unique\":\n\t\t\tprintVec(unique(str2vet(args[1])))\n\t\tcase \"repeated\":\n\t\t\tprintVec(repeated(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\t}\n\t}\n}\n\nfunc printVec(vet []int) {\n\tfmt.Print(\"[\")\n\tfor i, val := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(val)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc str2vet(s string) []int {\n\tif s == \"[]\" {\n\t\treturn nil\n\t}\n\ts = s[1 : len(s)-1]\n\tparts := strings.Split(s, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tn, _ := strconv.Atoi(part)\n\t\tvet = append(vet, n)\n\t}\n\treturn vet\n}\n\n",
+            "lines": "147"
+        }
+    ]
+}

@@ -2,8 +2,33 @@
     "patches": [
         {
             "label": "2026-03-24_11-29-42",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -23,633 +23,53 @@\n mt%22%0A\n-%0A//precisa de uma estrutura para os pontos em cartesiano%0A//aqui foi gpt mesmo viu%0Atype Ponto struct%7B%0A    x, y int%0A%7D%0A%0Afunc main() %7B%0A    var q int%0A    var d string%0A    fmt.Scan(&q, &d)%0A    cobra := make(%5B%5DPonto, q)%0A%0A    for i := 0; i %3C q; i++ %7B%0A        fmt.Scan(&cobra%5Bi%5D.x, &cobra%5Bi%5D.y)%0A    %7D%0A%0A    newHead := cobra%5B0%5D%0A    switch d %7B%0A        case %22U%22:%0A            newHead.y++%0A        case %22R%22:%0A            newHead.y--%0A        case %22D%22:%0A            newHead.x++%0A        case %22L%22:%0A            newHead.x--%0A    %7D%0A%0A    fmt.Println(newHead.x, newHead.y)%0A%0A    for i := 1; i %3C q; i++ %7B%0A        fmt.Println(cobra%5Bi%5D.x, cobra%5Bi%5D.y)%0A    %7D%0A%0A\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-04-06_21-44-54",
+            "content": "@@ -411,9 +411,9 @@\n se %22\n-D\n+R\n %22:%0A \n@@ -441,33 +441,33 @@\n -%0A        case %22\n-R\n+D\n %22:%0A            n\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_21-45-08",
+            "content": "@@ -369,9 +369,9 @@\n se %22\n-D\n+U\n %22:%0A \n@@ -399,33 +399,33 @@\n +%0A        case %22\n-U\n+D\n %22:%0A            n\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_21-46-06",
+            "content": "@@ -246,17 +246,17 @@\n or i := \n-1\n+0\n ; i %3C q;\n@@ -582,18 +582,16 @@\n  := \n-0\n+1\n ; i %3C q\n--1\n ; i+\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_21-47-59",
+            "content": "@@ -242,25 +242,25 @@\n    for i := \n-0\n+1\n ; i %3C q; i++\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-06_21-48-42",
+            "content": "package main\nimport \"fmt\"\n\n//precisa de uma estrutura para os pontos em cartesiano\n//aqui foi gpt mesmo viu\ntype Ponto struct{\n    x, y int\n}\n\nfunc main() {\n    var q int\n    var d string\n    fmt.Scan(&q, &d)\n    cobra := make([]Ponto, q)\n\n    for i := 0; i < q; i++ {\n        fmt.Scan(&cobra[i].x, &cobra[i].y)\n    }\n\n    newHead := cobra[0]\n    switch d {\n        case \"D\":\n            newHead.y++\n        case \"U\":\n            newHead.y--\n        case \"R\":\n            newHead.x++\n        case \"L\":\n            newHead.x--\n    }\n\n    fmt.Println(newHead.x, newHead.y)\n\n    for i := 0; i < q-1; i++ {\n        fmt.Println(cobra[i].x, cobra[i].y)\n    }\n\n\n}\n",
+            "lines": "39"
         }
     ]
 }
