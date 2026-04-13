@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-59-25",
+            "content": "@@ -489,16 +489,13 @@\n  %22)%0A%09%09%7D%0A\n-%09%7D%0A\n %0A%0A%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-13_17-59-50",
+            "content": "@@ -497,26 +497,8 @@\n %09%7D%0A%0A\n-%09fmt.Println(%22%22)%0A%0A\n %0A%0A%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-13_18-00-09",
+            "content": "@@ -506,15 +506,17 @@\n Println(\n+%22%22\n )%0A%0A%0A%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_18-00-33",
+            "content": "@@ -506,18 +506,15 @@\n Println(\n-%22 %22\n )%0A%0A%0A%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-04-13_18-00-50",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tvar n, ret int\n\tfmt.Scan(&n)\n\tvar qtd = make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&qtd[i])\n\t}\n\t//aqui da pra fazer uma melhoria legaaal de memoria\n\tfmt.Scan(&ret)\n\tmapa := make(map[int]bool)\n\tfor i := 0; i < ret; i++ {\n\t\tvar aux int\n\t\tfmt.Scan(&aux)\n\t\tmapa[aux] = true\n\t}\n\n\tres :=[]int{}\n\tfor _, v := range qtd {\n\t\tif !mapa[v] {\n\t\t\tres = append(res, v)\n\t\t}\n\t}\n\n\tfor i, v := range res {\n\t\tfmt.Print(v)\n\t\tif i < len(res)-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\n\tfmt.Println(\" \")\n\n\n\n}\n",
+            "lines": "37"
+        }
+    ]
+}

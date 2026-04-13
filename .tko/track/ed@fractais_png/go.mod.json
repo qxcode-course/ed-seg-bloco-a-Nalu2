@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_16-31-52",
+            "content": "module fractais\n\ngo 1.25.0\n\nrequire (\n\tgithub.com/fogleman/gg v1.3.0 // indirect\n\tgithub.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect\n\tgolang.org/x/image v0.38.0 // indirect\n)\n",
+            "lines": "9"
+        }
+    ]
+}

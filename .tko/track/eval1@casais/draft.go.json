@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_18-38-16",
+            "content": "@@ -204,16 +204,26 @@\n      par\n+ Procurar \n := -anim\n@@ -249,16 +249,24 @@\n asal%5Bpar\n+Procurar\n %5D %3E 0 %7B%0A\n@@ -311,16 +311,24 @@\n asal%5Bpar\n+Procurar\n %5D--%0A    \n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-04-13_18-39-13",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    semCasal := make(map[int]int)\n    Tcasais := 0\n    for i := 0; i < n; i++ {\n        var animal int\n        fmt.Scan(&animal)\n        par:= -animal\n\n        if semCasal[par] > 0 {\n            Tcasais++\n            semCasal[par]--\n        } else {\n            semCasal[animal]++\n        }\n    }\n    fmt.Println(Tcasais)\n}\n",
+            "lines": "21"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-13_17-42-03",
+            "content": "@@ -900,25 +900,6 @@\n  %7D%0A%0A\n-    fmt.Println()%0A%0A\n %7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-13_17-42-54",
+            "content": "@@ -538,33 +538,16 @@\n )%0A    %7D%0A\n-    fmt.Println()\n %0A    //i\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_17-43-12",
+            "content": "@@ -554,18 +554,16 @@\n Println(\n-%22%22\n )%0A    //\n@@ -933,10 +933,8 @@\n tln(\n-%22%22\n )%0A%0A%7D\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_17-46-32",
+            "content": "@@ -222,22 +222,21 @@\n  i %3C qtd\n-Possui\n+Total\n ; i++ %7B%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-13_17-50-42",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var qtdTotal, qtdPossui int\n    fmt.Scan(&qtdTotal, &qtdPossui)\n\n    cont := make(map[int]int)\n    temRep := false\n    priRep := true\n\n    //identificar repetida\n    for i := 0; i < qtdPossui; i++ {\n        var fig int\n        fmt.Scan(&fig)\n        if cont[fig] > 0 {\n            if !priRep {\n                fmt.Print(\" \")\n            }\n            fmt.Print(fig)\n            temRep = true\n            priRep = false\n        }\n        cont[fig]++\n    }\n\n    if !temRep {\n        fmt.Print(\"N\")\n    }\n    fmt.Println(\"\")\n    //identificar o que flata\n\n    temFalta := false\n    priFalta := true\n    for i := 1; i <= qtdTotal; i++ {\n        if cont[i] == 0 {\n            if !priFalta {\n                fmt.Print(\" \")\n            }\n            fmt.Print(i)\n            temFalta = true\n            priFalta = false\n        }\n    }\n\n    if !temFalta {\n        fmt.Print(\"N\")\n    }\n\n    fmt.Println(\"\")\n\n}\n",
+            "lines": "51"
+        }
+    ]
+}

@@ -24,3 +24,17 @@
 2026-04-07 11:38:57, SELF, v:1, k:ed@baruel, self:1, rate:100, study:150, concept:1
 2026-04-07 11:38:57, MOVE, v:1, k:ed@baruel, mode:BACK
 2026-04-07 16:17:31, MOVE, v:1, k:ed@manipulacao, mode:EDIT
+2026-04-07 16:18:50, MOVE, v:1, k:ed@fractais_png, mode:DOWN
+2026-04-07 16:18:55, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-07 16:18:50, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:18:50, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:18:50, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:18:50, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:22:19, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:22:19, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:31:52, EXEC, v:1, k:ed@fractais_png, mode:FREE, size:9
+2026-04-07 16:54:55, EXEC, v:1, k:src@go, mode:FREE, size:136
+2026-04-07 16:54:46, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:54:46, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 16:54:58, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-07 18:01:48, MOVE, v:1, k:ed@fractais_png, mode:BACK
