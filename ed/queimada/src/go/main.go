@@ -15,10 +15,10 @@ func burnTrees(grid [][]rune, l, c int) {
 	if l < 0 || l >= nl || c < 0 || c >= nc {
 		return
 	}
-	if grid[l][c] != 'T' {
+	if grid[l][c] != '#' {
 		return
 	}
-	grid[l][c] = 'F'
+	grid[l][c] = 'o'
 	burnTrees(grid, l-1, c)
 	burnTrees(grid, l+1, c)
 	burnTrees(grid, l, c-1)

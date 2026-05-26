@@ -29,5 +29,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@fractais_png
-selected_index: 18
+selected: ed@labirinto
+selected_index: 17
