@@ -18,7 +18,7 @@ Veja a resolução da atividade "Empilhamento da Recursão" para entender como f
 Você deve implementar a função `processa` no arquivo `lib.cpp`.
 
 <!-- links .cache/drafts -->
-- cpp
+- cpp 
   - [main.cpp](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/triangulo/.cache/drafts/cpp/main.cpp)
   - [user.cpp](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/triangulo/.cache/drafts/cpp/user.cpp)
 - go

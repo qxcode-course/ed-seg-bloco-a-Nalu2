@@ -4,16 +4,24 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strconv"
+	"strconv" 
 	"strings"
 )
 
 func processa(vet []int) {
-	_ = vet;
-	// 1. defina o ponto de parada
-	// 2. monte o vetor auxiliar com os resultados das somas
-	// 3. chame recursivamente a função processa para o vetor auxiliar
-	// 4. imprima o vetor original
+	if len(vet) < 1 {
+		return
+	}
+	if len(vet) == 1 {
+		fmt.Printf("[ %s ]\n", Join(vet, " "))
+		return
+	}
+	aux := make([]int, len(vet)-1)
+	for i := 0; i < len(vet)-1; i++ {
+		aux[i] = vet[i] + vet[i+1]
+	}
+	processa(aux)
+	fmt.Printf("[ %s ]\n", Join(vet, " "))
 }
 
 func main() {

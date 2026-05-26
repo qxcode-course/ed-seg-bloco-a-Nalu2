@@ -1,0 +1,27 @@
+2026-05-26 00:13:34, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-05-26 00:14:13, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100, size:55
+2026-05-26 00:14:15, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-05-26 00:14:40, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 00:15:58, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 00:16:12, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 00:15:26, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-05-26 00:38:05, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 01:02:20, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 01:02:35, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 01:02:43, EXEC, v:1, k:ed@queimada, mode:FULL, rate:16, size:46
+2026-05-26 01:02:46, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 01:03:01, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 01:03:20, EXEC, v:1, k:ed@queimada, mode:FULL, rate:16, size:48
+2026-05-26 01:03:21, EXEC, v:1, k:ed@queimada, mode:FULL, rate:16
+2026-05-26 01:03:22, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 01:03:39, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 01:03:15, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 01:08:22, EXEC, v:1, k:ed@queimada, mode:FULL, rate:16, size:51
+2026-05-26 01:08:24, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 01:08:29, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-26 01:08:17, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 10:51:52, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-05-26 13:50:39, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-05-26 13:54:34, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-05-26 14:12:16, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-05-26 14:12:20, MOVE, v:1, k:ed@queimada, mode:PICK

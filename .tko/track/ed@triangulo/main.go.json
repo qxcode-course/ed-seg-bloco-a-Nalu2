@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_15-56-04",
+            "content": "@@ -306,19 +306,16 @@\n rocessa(\n-aux\n )%0A%09fmt.P\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-25_15-59-44",
+            "content": "@@ -160,30 +160,39 @@\n tln(%22%5B %25\n-d\n+s\n  %5D%5Cn%22, \n-vet%5B0%5D\n+Join(vet, %22, %22)\n )%0A%09%09retu\n@@ -331,22 +331,31 @@\n %22%5B %25\n-d\n+s\n  %5D%5Cn%22, \n-vet%5B0%5D\n+Join(vet, %22, %22)\n )%0A%7D%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-25_16-01-44",
+            "content": "@@ -160,39 +160,30 @@\n tln(%22%5B %25\n-s\n+d\n  %5D%5Cn%22, \n-Join(vet, %22, %22)\n+vet%5B0%5D\n )%0A%09%09retu\n@@ -322,31 +322,22 @@\n %22%5B %25\n-s\n+d\n  %5D%5Cn%22, \n-Join(vet, %22, %22)\n+vet%5B0%5D\n )%0A%7D%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-25_16-20-17",
+            "content": "@@ -175,24 +175,25 @@\n  Join(vet, %22\n+,\n  %22))%0A%09%09retur\n@@ -346,16 +346,17 @@\n n(vet, %22\n+,\n  %22))%0A%7D%0A%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-25_16-26-31",
+            "content": "@@ -145,33 +145,34 @@\n  1 %7B%0A%09%09fmt.Print\n-f\n+ln\n (%22%5B %25s %5D%5Cn%22, Joi\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-05-26_00-14-12",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\" \n\t\"strings\"\n)\n\nfunc processa(vet []int) {\n\tif len(vet) < 1 {\n\t\treturn\n\t}\n\tif len(vet) == 1 {\n\t\tfmt.Printf(\"[ %s ]\\n\", Join(vet, \" \"))\n\t\treturn\n\t}\n\taux := make([]int, len(vet)-1)\n\tfor i := 0; i < len(vet)-1; i++ {\n\t\taux[i] = vet[i] + vet[i+1]\n\t}\n\tprocessa(aux)\n\tfmt.Printf(\"[ %s ]\\n\", Join(vet, \" \"))\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tvet := []int{}\n\tfor _, part := range parts {\n\t\tif value, err := strconv.Atoi(part); err == nil {\n\t\t\tvet = append(vet, value)\n\t\t}\n\t}\n\tprocessa(vet)\n}\n\nfunc Join[T any](v []T, sep string) string {\n\tif len(v) == 0 {\n\t\treturn \"\"\n\t}\n\ts := \"\"\n\tfor i, x := range v {\n\t\tif i > 0 {\n\t\t\ts += sep\n\t\t}\n\t\ts += fmt.Sprintf(\"%v\", x)\n\t}\n\treturn s\n}\n",
+            "lines": "55"
+        }
+    ]
+}
