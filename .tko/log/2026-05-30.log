@@ -1,0 +1,28 @@
+2026-05-30 21:21:06, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-05-30 21:21:24, SELF, v:1, k:ed@princesa, self:1, rate:100, concept:1
+2026-05-30 21:21:26, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-05-30 21:21:27, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-05-30 21:21:38, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-05-30 21:21:41, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-05-30 21:21:44, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-05-30 21:21:45, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-05-30 21:21:49, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-05-30 21:21:50, MOVE, v:1, k:ed@buscas, mode:DOWN
+2026-05-30 21:21:55, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-05-30 21:22:02, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100
+2026-05-30 21:22:22, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:80, concept:1
+2026-05-30 21:22:23, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-05-30 21:22:25, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-05-30 21:22:29, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-05-30 21:22:42, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-30 21:22:52, SELF, v:1, k:ed@queimada, self:1, rate:100, study:60
+2026-05-30 21:22:53, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-30 21:22:56, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-05-30 21:23:08, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:130, concept:1
+2026-05-30 21:23:09, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-05-30 21:24:10, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-05-30 21:21:50, MOVE, v:1, k:ed@buscas, mode:EDIT
+2026-05-30 21:21:50, MOVE, v:1, k:ed@buscas, mode:EDIT
+2026-05-30 21:21:50, MOVE, v:1, k:ed@buscas, mode:EDIT
+2026-05-30 22:15:54, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-05-30 22:15:56, MOVE, v:1, k:ed@treinando, mode:PICK

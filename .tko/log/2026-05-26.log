@@ -33,3 +33,15 @@
 2026-05-26 14:17:37, EXEC, v:1, k:ed@queimada, mode:FULL, rate:16, size:51
 2026-05-26 14:17:47, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100, size:51
 2026-05-26 14:17:49, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-26 14:19:20, MOVE, v:1, k:ed@labirinto, mode:DOWN
+2026-05-26 14:19:24, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-26 14:17:43, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-26 14:19:20, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-26 14:19:20, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-26 14:19:20, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-26 15:32:34, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-05-26 16:53:11, MOVE, v:1, k:ed@treinando, mode:DOWN
+2026-05-26 16:53:17, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-05-26 16:53:11, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-26 16:53:11, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-05-26 16:53:11, MOVE, v:1, k:ed@treinando, mode:EDIT
