@@ -19,14 +19,13 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@dfs
-- ed@backtrack
-- eval1@eval1
-- ed@list
-- ed@tree
-- ed@bfs
 - ed@linear
+- ed@backtrack
+- ed@map_set
+- ed@list
 - ed@vector
+- ed@rec
+- ed@tree
 flags:
   inbox: all
   panel: graph
@@ -34,5 +33,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vetbuild
-selected_index: 4
+selected: ed@labirinto
+selected_index: 17

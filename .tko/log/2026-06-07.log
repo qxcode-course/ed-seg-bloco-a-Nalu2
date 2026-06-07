@@ -1,3 +1,30 @@
 2026-06-07 15:40:46, MOVE, v:1, k:ed@vetbuild, mode:PICK
 2026-06-07 16:14:49, MOVE, v:1, k:ed@vetbuild, mode:BACK
 2026-06-07 16:15:05, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:15:35, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:15:37, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:15:43, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:233, fail:COMP
+2026-06-07 16:15:53, EXEC, v:1, k:ed@vetbuild, mode:FREE
+2026-06-07 16:15:58, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:16:16, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:16:19, EXEC, v:1, k:ed@vetbuild, mode:FREE
+2026-06-07 16:16:27, EXEC, v:1, k:ed@vetbuild, mode:FREE
+2026-06-07 16:16:37, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:17:45, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:18:13, EXEC, v:1, k:ed@vetbuild, mode:FREE
+2026-06-07 16:20:25, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:20:47, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:33:04, EXEC, v:1, k:ed@vetbuild, mode:FREE, size:278
+2026-06-07 16:33:08, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:33:16, MOVE, v:1, k:ed@vetbuild, mode:PICK
+2026-06-07 16:33:01, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-06-07 16:49:09, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-06-07 16:54:47, EXEC, v:1, k:ed@vetbuild, mode:FULL, size:277, fail:COMP
+2026-06-07 16:54:50, MOVE, v:1, k:ed@vetbuild, mode:BACK
+2026-06-07 16:56:52, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-06-07 16:54:55, MOVE, v:1, k:ed@vetbuild, mode:EDIT
+2026-06-07 17:07:19, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100, size:78
+2026-06-07 17:07:23, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-06-07 17:07:28, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-06-07 17:07:29, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-06-07 17:07:08, MOVE, v:1, k:ed@labirinto, mode:EDIT
