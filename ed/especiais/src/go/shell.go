@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"sort"
 )
 
 type Pair struct {
@@ -14,13 +15,47 @@ type Pair struct {
 }
 
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len(vet) == 0 {
+		return nil
+	}
+	counts := make(map[int]int)
+	for _, val := range vet {
+		absVal := val
+		if val < 0 {
+			absVal = -val
+		}
+		counts[absVal]++
+	}
+	var keys []int
+	for k := range counts {
+		keys = append(keys, k)
+	}
+	sort.Ints(keys)
+	var result []Pair
+	for _, k := range keys {
+		result = append(result, Pair{k, counts[k]})
+	}
+	return result
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len (vet) == 0 {
+		return nil
+	}
+	var result []Pair
+	currentStress := vet[0]
+	count := 1
+	for i := 1; i < len(vet); i++ {
+		if vet[i] == currentStress{
+			count++
+		}else{
+			result = append(result, Pair{currentStress, count})
+			currentStress = vet[i]
+			count = 1
+		}
+	}
+	result = append(result, Pair{currentStress, count})
+	return result
 }
 
 func mnext(vet []int) []int {

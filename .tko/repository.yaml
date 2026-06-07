@@ -19,19 +19,19 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@linear
-- ed@backtrack
-- ed@map_set
-- ed@list
 - ed@vector
-- ed@rec
 - ed@tree
+- ed@backtrack
+- ed@linear
+- ed@map_set
+- ed@rec
+- ed@list
 flags:
-  inbox: all
+  inbox: inbox
   panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
-selected_index: 17
+selected: ed@vetbuild
+selected_index: 20
