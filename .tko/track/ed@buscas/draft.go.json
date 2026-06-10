@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-08_15-56-34",
+            "content": "@@ -790,187 +790,4 @@\n ry)%0A\n-    var resultStrings %5B%5Dstring%0A    for _, r := range result %7B%0A        resultStrings = append(resultStrings, strconv.Itoa(r))%0A    %7D%0A    fmt.Println(strings.Join(resultStrings, %22 %22))%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-08_16-05-30",
+            "content": "@@ -133,18 +133,16 @@\n string) \n-%5B%5D\n int %7B%0A  \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-10_09-34-49",
+            "content": "@@ -1,707 +1,58 @@\n-package main%0Aimport (%0A    %22fmt%22%0A    %22bufio%22%0A    %22os%22%0A    %22strings%22%0A    %22strconv%22%0A)%0A%0Afunc sameStrings (stringInput %5B%5Dstring, query %5B%5Dstring) %5B%5Dint %7B%0A    count := make(map%5Bstring%5Dint)%0A    for _, str := range stringInput %7B%0A        count%5Bstr%5D++%0A    %7D%0A%0A    result := make(%5B%5Dint, len(query))%0A    for i, q := range query %7B%0A        result%5Bi%5D = count%5Bq%5D%0A    %7D%0A    return result%0A%7D%0A%0A%0Afunc main() %7B%0A    scanner := bufio.NewScanner(os.Stdin)%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    _=scanner.Text()%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    query := strings.Fields(scanner.Text())%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    _=scanner.Text()%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    \n+@@ -688,37 +688,43 @@%0A eturn%250A    %257D%250A    %0A-query%0A+\n stri\n@@ -58,16 +58,18 @@\n ingInput\n+%0A \n  := stri\n@@ -80,252 +80,54 @@\n Fiel\n-ds(scanner.Text())%0A    result := sameStrings(stringInput, query)%0A    var resultStrings %5B%5Dstring%0A    for _, r := range result %7B%0A        resultStrings = append(resultStrings, strconv.Itoa(r))%0A    %7D%0A    fmt.Println(strings.Join(resultStrings, %22 %22))%0A%7D\n+%0A@@ -742,17 +742,16 @@%0A Text())%250A%0A-%250A%0A     resu\n %0A\n",
+            "lines": "9"
+        },
+        {
+            "label": "2026-06-10_09-46-06",
+            "content": "@@ -621,24 +621,44 @@\n eturn%0A    %7D%0A\n+    _=scanner.Text()\n %0A    if !sca\n@@ -688,37 +688,43 @@\n eturn%0A    %7D%0A    \n-query\n+stringInput\n  := strings.Fiel\n@@ -819,17 +819,16 @@\n %5Dstring%0A\n-%0A\n     for \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-10_09-49-53",
+            "content": "@@ -426,21 +426,20 @@\n in)%0A    \n-%0A    \n+if !\n scanner.\n@@ -448,152 +448,61 @@\n an()\n+ %7B\n %0A    \n-n, _ := strconv.Atoi(scanner.Text())%0A    %0A    // Le as N strings%0A    stringInput := make(%5B%5Dstring, n)%0A    for i := 0; i %3C n; i++ %7B%0A        \n+    return%0A    %7D%0A    _=scanner.Text()%0A    if !\n scan\n@@ -503,32 +503,34 @@\n  !scanner.Scan()\n+ %7B\n %0A        stringI\n@@ -526,89 +526,48 @@\n     \n-stringInput%5Bi%5D = scanner.Text()%0A    %7D%0A    scanner.Scan()%0A    q, _ := strconv.Atoi\n+return%0A    %7D%0A    query := strings.Fields\n (sca\n@@ -583,77 +583,63 @@\n ())%0A\n-%0A\n     \n-query := make(%5B%5Dstring, q)%0A    for i := 0; i %3C q; i++ %7B%0A        \n+if !scanner.Scan() %7B%0A        return%0A    %7D%0A%0A    if !\n scan\n@@ -648,16 +648,18 @@\n r.Scan()\n+ %7B\n %0A       \n@@ -663,19 +663,49 @@\n     \n-query%5Bi%5D = \n+return%0A    %7D%0A    query := strings.Fields(\n scan\n@@ -714,23 +714,17 @@\n r.Text()\n-%0A    %7D%0A\n+)\n %0A    res\n@@ -761,16 +761,47 @@\n , query)\n+%0A    var resultStrings %5B%5Dstring\n %0A%0A    fo\n@@ -837,27 +837,117 @@\n     \n-fmt.Println\n+resultStrings = append(resultStrings, strconv.Itoa\n (r)\n+)\n %0A    %7D%0A\n+    fmt.Println(strings.Join(resultStrings, %22 %22))%0A\n %7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-10_09-51-50",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -326,16 +326,18 @@\n esult%5Bi%5D\n+ =\n  count%5Bq\n@@ -365,16 +365,17 @@\n sult%0A%7D%0A%0A\n+%0A\n func mai\n@@ -488,24 +488,47 @@\n ext())%0A    %0A\n+    // Le as N strings%0A\n     stringIn\n@@ -646,29 +646,24 @@\n ext()%0A    %7D%0A\n-    %0A\n     scanner.\n@@ -706,29 +706,25 @@\n ner.Text())%0A\n-    \n %0A\n+\n     query :=\n@@ -834,21 +834,17 @@\n )%0A    %7D%0A\n-    \n %0A\n+\n     resu\n@@ -881,20 +881,16 @@\n  query)%0A\n-    \n %0A    for\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-10_09-54-18",
+            "content": "@@ -327,18 +327,16 @@\n esult%5Bi%5D\n- =\n  count%5Bq\n@@ -886,36 +886,28 @@\n for \n-i := 0; i %3C len(result); i++\n+_, r := range result\n  %7B%0A \n@@ -926,24 +926,16 @@\n rintln(r\n-esult%5Bi%5D\n )%0A    %7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-10_09-55-12",
+            "content": "@@ -6,16 +6,17 @@\n ge main%0A\n+%0A\n import (\n@@ -366,17 +366,16 @@\n sult%0A%7D%0A%0A\n-%0A\n func mai\n@@ -422,28 +422,29 @@\n .Stdin)%0A    \n-if !\n+%0A    \n scanner.Scan\n@@ -449,38 +449,34 @@\n an()\n- %7B\n %0A    \n-    return%0A    %7D%0A    _=\n+n, _ := strconv.Atoi(\n scan\n@@ -489,107 +489,159 @@\n xt()\n+)\n %0A    \n-if !scanner.Scan() %7B%0A        return\n+%0A    stringInput := make(%5B%5Dstring, n)%0A    for i := 0; i %3C n; i++ %7B\n %0A    \n-%7D%0A\n     \n-query := strings.Fields(scanner.Text())%0A    if !\n+scanner.Scan()%0A        stringInput%5Bi%5D = scanner.Text()%0A    %7D%0A    %0A    \n scan\n@@ -654,38 +654,34 @@\n an()\n- %7B\n %0A    \n-    return%0A    %7D%0A    _=\n+q, _ := strconv.Atoi(\n scan\n@@ -694,89 +694,117 @@\n xt()\n+)\n %0A    \n-if !scanner.Scan() %7B%0A        return\n+%0A    query := make(%5B%5Dstring, q)%0A    for i := 0; i %3C q; i++ %7B%0A        scanner.Scan()\n %0A    \n-%7D%0A\n     \n-stringInput := strings.Fields(\n+query%5Bi%5D = \n scan\n@@ -809,25 +809,35 @@\n anner.Text()\n-)\n+%0A    %7D%0A    \n %0A    result \n@@ -879,135 +879,52 @@\n     \n-var resultStrings %5B%5Dstring%0A    for _, r := range result %7B%0A        resultStrings = app\n+%0A    for i := 0; i %3C l\n en\n-d\n (result\n-Strings, strconv.Itoa(r))\n+); i++ %7B\n %0A    \n-%7D%0A\n     \n@@ -939,40 +939,23 @@\n tln(\n-strings.Join(resultStrings, %22 %22))\n+result%5Bi%5D)%0A    %7D\n %0A%7D%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-10_09-55-50",
+            "content": "@@ -422,29 +422,28 @@\n .Stdin)%0A    \n-%0A    \n+if !\n scanner.Scan\n@@ -448,49 +448,38 @@\n an()\n+ %7B\n %0A    \n-tamanhoConsultas, _ := strconv.Atoi(\n+    return%0A    %7D%0A    _=\n scan\n@@ -484,35 +484,33 @@\n anner.Text()\n-)\n %0A    \n-%0A    \n+if !\n scanner.Scan\n@@ -507,24 +507,47 @@\n anner.Scan()\n+ %7B%0A        return%0A    %7D\n %0A    query :\n@@ -575,37 +575,36 @@\n ner.Text())%0A    \n-%0A    \n+if !\n scanner.Scan()%0A \n@@ -605,79 +605,46 @@\n an()\n+ %7B\n %0A    \n-tamanhoBuscas, _ := strconv.Atoi(scanner.Text())\n+    return\n %0A    \n+%7D\n %0A    \n+_=\n scanner.\n Scan\n@@ -643,265 +643,110 @@\n ner.\n-Scan\n+Text\n ()%0A    \n-stringInput := strings.Fields(scanner.Text())%0A    %0A    if len(query) != tamanhoConsultas %7B%0A        query = query%5B:tamanhoConsultas%5D%0A    %7D%0A    %0A    if len(stringInput) != tamanhoBuscas %7B%0A        stringInput = stringInput%5B:tamanhoBuscas%5D%0A    %7D%0A    \n+if !scanner.Scan() %7B%0A        return%0A    %7D%0A    stringInput := strings.Fields(scanner.Text())\n %0A   \n@@ -792,13 +792,8 @@\n ry)%0A\n-    %0A\n     \n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-10_09-58-19",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -365,16 +365,17 @@\n sult%0A%7D%0A%0A\n+%0A\n func mai\n@@ -457,20 +457,23 @@\n  tamanho\n-Busc\n+Consult\n as, _ :=\n@@ -530,27 +530,21 @@\n n()%0A    \n-stringInput\n+query\n  := stri\n@@ -597,39 +597,36 @@\n an()%0A    tamanho\n-Consult\n+Busc\n as, _ := strconv\n@@ -667,37 +667,43 @@\n nner.Scan()%0A    \n-query\n+stringInput\n  := strings.Fiel\n@@ -737,27 +737,21 @@\n  if len(\n-stringInput\n+query\n ) != tam\n@@ -754,20 +754,23 @@\n  tamanho\n-Busc\n+Consult\n as %7B%0A   \n@@ -778,33 +778,21 @@\n     \n-stringInput = stringInput\n+query = query\n %5B:ta\n@@ -796,20 +796,23 @@\n :tamanho\n-Busc\n+Consult\n as%5D%0A    \n@@ -821,37 +821,43 @@\n     %0A    if len(\n-query\n+stringInput\n ) != tamanhoCons\n@@ -844,39 +844,36 @@\n nput) != tamanho\n-Consult\n+Busc\n as %7B%0A        que\n@@ -865,37 +865,49 @@\n s %7B%0A        \n-query = query\n+stringInput = stringInput\n %5B:tamanhoCon\n@@ -895,39 +895,36 @@\n ngInput%5B:tamanho\n-Consult\n+Busc\n as%5D%0A    %7D%0A    %0A \n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-10_09-59-05",
+            "content": "package main\n\nimport (\n    \"fmt\"\n    \"bufio\"\n    \"os\"\n    \"strings\"\n    \"strconv\"\n)\n\nfunc sameStrings (stringInput []string, query []string) []int {\n    count := make(map[string]int)\n    for _, str := range stringInput {\n        count[str]++\n    }\n\n    result := make([]int, len(query))\n    for i, q := range query {\n        result[i] = count[q]\n    }\n    return result\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    \n    scanner.Scan()\n    tamanhoBuscas, _ := strconv.Atoi(scanner.Text())\n    \n    scanner.Scan()\n    stringInput := strings.Fields(scanner.Text())\n    \n    scanner.Scan()\n    tamanhoConsultas, _ := strconv.Atoi(scanner.Text())\n    \n    scanner.Scan()\n    query := strings.Fields(scanner.Text())\n    \n    if len(stringInput) != tamanhoBuscas {\n        stringInput = stringInput[:tamanhoBuscas]\n    }\n    \n    if len(query) != tamanhoConsultas {\n        query = query[:tamanhoConsultas]\n    }\n    \n    result := sameStrings(stringInput, query)\n    \n    var resultStrings []string\n    for _, r := range result {\n        resultStrings = append(resultStrings, strconv.Itoa(r))\n    }\n    fmt.Println(strings.Join(resultStrings, \" \"))\n}\n",
+            "lines": "54"
+        }
+    ]
+}

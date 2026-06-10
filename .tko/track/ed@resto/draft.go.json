@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-10_10-56-09",
+            "content": "@@ -28,27 +28,21 @@\n unc \n-resto(n int\n+main(\n ) %7B%0A    \n if n\n@@ -41,139 +41,35 @@\n     \n-if n == 0%7B%0A        return%0A    %7D%0A    resto(n/2)%0A    fmt.Println(n/2, n%252)%0A%7D%0Afunc main() %7B%0A    var n int%0A    fmt.Scan(&n)%0A    resto(n\n+fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-10_11-04-26",
+            "content": "package main\nimport \"fmt\"\nfunc resto(n int) {\n    if n == 0{\n        return\n    }\n    resto(n/2)\n    fmt.Println(n/2, n%2)\n}\nfunc main() {\n    var n int\n    fmt.Scan(&n)\n    resto(n)\n}\n",
+            "lines": "14"
+        }
+    ]
+}

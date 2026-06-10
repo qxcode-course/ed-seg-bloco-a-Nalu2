@@ -51,3 +51,21 @@
 2026-06-07 18:04:39, MOVE, v:1, k:ed@especiais, mode:PICK
 2026-06-07 18:04:53, MOVE, v:1, k:ed@especiais, mode:BACK
 2026-06-07 18:05:13, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-07 18:05:45, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-07 18:05:49, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-07 18:05:20, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-07 18:30:04, EXEC, v:1, k:ed@especiais, mode:FREE, size:198
+2026-06-07 18:30:12, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-07 18:30:22, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-07 18:29:53, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-07 19:25:16, EXEC, v:1, k:ed@especiais, mode:FREE, size:221
+2026-06-07 19:25:23, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-07 19:25:41, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-07 19:25:13, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-07 20:02:07, EXEC, v:1, k:ed@especiais, mode:FREE, size:227
+2026-06-07 20:02:11, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-07 20:02:02, MOVE, v:1, k:ed@especiais, mode:EDIT
+2026-06-07 22:29:44, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-07 22:29:58, EXEC, v:1, k:ed@especiais, mode:FREE
+2026-06-07 22:30:03, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-07 22:30:05, MOVE, v:1, k:ed@especiais, mode:PICK

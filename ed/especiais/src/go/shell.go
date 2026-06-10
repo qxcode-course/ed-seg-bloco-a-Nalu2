@@ -38,6 +38,9 @@ func occurr(vet []int) []Pair {
 	return result
 }
 
+//SAPORRA NAO TA CONTANDO O TEMPO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+
 func teams(vet []int) []Pair {
 	if len (vet) == 0 {
 		return nil
@@ -59,43 +62,116 @@ func teams(vet []int) []Pair {
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	result := make([]int, len(vet))
+	for i := 0; i < len(vet); i++ {
+		if vet[i] > 0 { // Se for homem
+			hasWomanNeighbor := false
+			if i > 0 && vet[i-1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if hasWomanNeighbor {
+				result[i] = 1
+			}
+		}
+	}
+	return result
 }
 
+//colca 1 nos homens que nao tem mulher
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	result := make([]int, len(vet))
+	for i := 0; i < len(vet); i++ {
+		if vet[i] > 0 { //é homi
+			hasWomanNeighbor := false
+			if i > 0 && vet[i-1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if !hasWomanNeighbor {
+				result[i] = 1
+			}
+		}
+		
+	}
+	return result
 }
+
+//quantos casais podem ser formados
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+	menCount := make(map[int]int)
+	womenCount := make(map[int]int)
+	for _, val := range vet {
+		if val > 0 {
+			menCount[val]++
+		} else if val < 0 {
+			womenCount[-val]++
+		}
+	}
+	couples := 0
+	for stress, mCount := range menCount {
+		if wCount, exists := womenCount[stress]; exists {
+			if mCount < wCount {
+				couples += mCount
+			} else {
+				couples += wCount
+			}
+		}
+	}
+	return couples
 }
-
+ 
 func hasSubseq(vet []int, seq []int, pos int) bool {
-	_ = vet
-	_ = seq
-	_ = pos
-	return false
+	if pos+len(seq) > len(vet) {
+		return false
+	}
+	for i := 0; i < len(seq); i++ {
+		if vet[pos+i] != seq[i] {
+			return false
+		}
+	}
+	return true	
 }
 
 func subseq(vet []int, seq []int) int {
-	_ = vet
-	_ = seq
+	if len(seq) == 0 {
+		return 0
+	}
+	for i := 0; i <= len(vet)-len(seq); i++ {
+		if hasSubseq(vet, seq, i) {
+			return i
+		}
+	}
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	_ = posList
-	return nil
+	toRemove := make(map[int]bool)
+	for _, pos := range posList {
+		toRemove[pos] = true
+	}
+	var result []int
+	for i, val := range vet {
+		if !toRemove[i] {
+			result = append(result, val)
+		}
+	}
+	return result
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	_ = value
-	return nil
+	var result []int
+	for _, val := range vet {
+		if val != value {
+			result = append(result, val)
+		}
+	}
+	return result
 }
 
 func main() {

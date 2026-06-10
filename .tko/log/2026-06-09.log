@@ -1,0 +1,14 @@
+2026-06-09 15:18:52, MOVE, v:1, k:ed@especiais, mode:PICK
+2026-06-09 15:18:55, EXEC, v:1, k:ed@especiais, mode:FULL, fail:COMP
+2026-06-09 15:19:00, MOVE, v:1, k:ed@especiais, mode:BACK
+2026-06-09 15:19:01, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-06-09 15:19:03, EXEC, v:1, k:ed@buscas, mode:FULL, fail:COMP
+2026-06-09 15:19:04, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-06-09 15:19:09, MOVE, v:1, k:ed@rotacoes, mode:DOWN
+2026-06-09 15:20:14, MOVE, v:1, k:ed@rotacoes, mode:PICK
+2026-06-09 15:19:09, MOVE, v:1, k:ed@rotacoes, mode:EDIT
+2026-06-09 15:19:09, MOVE, v:1, k:ed@rotacoes, mode:EDIT
+2026-06-09 15:19:09, MOVE, v:1, k:ed@rotacoes, mode:EDIT
+2026-06-09 15:23:54, EXEC, v:1, k:ed@rotacoes, mode:FREE, size:5
+2026-06-09 19:08:03, MOVE, v:1, k:ed@rotacoes, mode:BACK
+2026-06-09 19:08:06, MOVE, v:1, k:ed@rotacoes, mode:PICK
