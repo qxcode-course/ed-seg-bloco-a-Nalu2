@@ -1,9 +1,8 @@
 package main
 
 import (
-	"math"
-
-	"github.com/fogleman/gg"
+    "math"
+    "github.com/fogleman/gg"
 )
 
 type Pen struct {

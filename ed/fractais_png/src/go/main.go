@@ -2,38 +2,44 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"math"
 )
 
-func randInt(min, max int) int {
-	return min + rand.Intn(max-min+1)
+func circulo(pen *Pen, x, y, raio float64, nivel int) {
+	if nivel == 0 {
+		return
+	}
+    pen.Up()
+    pen.SetPosition(x, y)
+	pen.Down()
+    pen.DrawCircle(raio)
+	novoRaio := raio / 3.0
+	distanciaCentros := raio
+
+	for i := 0; i < 6; i++{
+		angulo := float64(i) * 60.0
+		rad := angulo * math.Pi / 180.0
+		novoX := x + distanciaCentros*math.Cos(rad)
+		novoY := y + distanciaCentros*math.Sin(rad)
+		circulo(pen, novoX, novoY, novoRaio, nivel-1)
+	}
 }
 
 func main() {
-	pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura
-	pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho
-	pen.SetPosition(250, 500) // move o pincel para x 250, y 500
-	pen.SetHeading(90)        // coloca o pincel apontando para cima
-	pen.Walk(100)             // anda 100 pixels
-	pen.Left(30)              // dobra 30 graus para esquerda
-	pen.Walk(100)             // anda 100 pixels
-	pen.DrawCircle(50)        // desenha um círculo de raio 50
-	pen.Right(60)             // gira para direita 60 graus
-	pen.Walk(150)
-	for range 10 {
-		pen.Up()
-		pen.Walk(30) // anda sem riscar
-		pen.Down()
+    largura, altura := 800, 800
+	pen := NewPen(largura, altura)
+	pen.dc.SetRGB(0, 0, 0) 
+	pen.dc.Clear()
 
-		pen.DrawCircle(10) //desenha um circulo pequeno
+	pen.SetRGB(255, 255, 255) 
+	pen.SetLineWidth(1)
 
-		pen.Up()
-		pen.Walk(-30) // volta sem riscar
-		pen.Down()
+	centroX := float64(largura) / 2.0
+	centroY := float64(altura) / 2.0
+	raioInicial := 250.0 
+	niveis := 6       
+	circulo(pen, centroX, centroY, raioInicial, niveis)
 
-		pen.Left(36) // gira
-	}
-
-	pen.SavePNG("tree.png")
-	fmt.Println("PNG file created successfully.")
+    pen.SavePNG("circulos.png")
+	fmt.Println("PNG gerado com sucesso!")
 }

@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-10_15-06-40",
+            "content": "@@ -398,22 +398,19 @@\n pen.\n-Up()%0A%09pen.Goto\n+SetPosition\n (x, \n@@ -433,28 +433,16 @@\n ng(ang)%0A\n-%09pen.Down()%0A\n %7D%0A%0A%0A%0A%0Afu\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-10_15-09-19",
+            "content": "@@ -199,33 +199,8 @@\n ) %7B%0A\n-%09pen := NewPen(500, 500)%0A\n %09if \n@@ -452,386 +452,794 @@\n n()%0A\n-%0A%09pen.Right(angulo)%0A%09pen.SetHeading(ang - angulo)%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minComprimento)%0A%09pen.Up()%0A%09pen.Goto(x, y)%0A%09pen.SetHeading(ang)%0A%09pen.Down()%0A%09%0A%09pen.SavePNG(%22tree.png%22)%0A%09fmt.Println(%22PNG file created successfully.%22)%0A%7D%0A%0A%0A%0A%0Afunc main() %7B%0A%09pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetPosition(250, 500) \n+%7D%0A%0A%0A%0A%0Afunc main() %7B%0A%09pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%0A%09pen.SetRGB(255, 0, 0)     // muda a cor do pincel para vermelho%0A%09pen.SetPosition(250, 500) // move o pincel para x 250, y 500%0A%09pen.SetHeading(90)        // coloca o pincel apontando para cima%0A%09pen.Walk(100)             // anda 100 pixels%0A%09pen.Left(30)              // dobra 30 graus para esquerda%0A%09pen.Walk(100)             // anda 100 pixels%0A%09pen.DrawCircle(50)        // desenha um c%C3%ADrculo de raio 50%0A%09pen.Right(60)             // gira para direita 60 graus%0A%09pen.Walk(150)%0A%09for range 10 %7B%0A%09%09pen.Up()%0A%09%09pen.Walk(30) // anda sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.DrawCircle(10) //desenha um circulo pequeno%0A%0A%09%09pen.Up()%0A%09%09pen.Walk(-30) // volta sem riscar%0A%09%09pen.Down()%0A%0A%09%09pen.Left(36) // gira\n %0A%09%7D%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-10_22-39-17",
+            "content": "@@ -836,99 +836,30 @@\n .Set\n-RGB(0, 0, 0)%0A%09pen.SetLineWidth(2)%0A%09pen.SetPosition(250, 500) %0A%09pen.Up()%0A%09Pen.Goto(400, 750)\n+Position(250, 500) %0A%09%7D\n %0A%0A%09p\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-06-10_22-44-45",
+            "content": "@@ -195,16 +195,41 @@\n at64) %7B%0A\n+%09pen := NewPen(500, 500)%0A\n %09if comp\n@@ -255,16 +255,16 @@\n mento %7B%0A\n-\n %09%09return\n@@ -485,32 +485,62 @@\n n.Right(angulo)%0A\n+%09pen.SetHeading(ang - angulo)%0A\n %09arvore(pen, com\n@@ -651,16 +651,88 @@\n own()%0A%09%0A\n+%09pen.SavePNG(%22tree.png%22)%0A%09fmt.Println(%22PNG file created successfully.%22)%0A\n %7D%0A%0A%0A%0A%0Afu\n@@ -866,26 +866,16 @@\n idth(2)%0A\n-%09pen.Up()%0A\n %09pen.Set\n@@ -903,203 +903,31 @@\n pen.\n-SetHeading(90)%0A%09pen.Down()%0A%09Pen.Goto(400, 750)%0A%0A%09comprimento := 100.0%0A%09angulo := 35.0   %0A%09reducao := 0.68%0A%09minComprimento := 5.0%0A%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minComprimento\n+Up()%0A%09Pen.Goto(400, 750\n )%0A%0A%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-06-10_22-48-25",
+            "content": "@@ -806,25 +806,25 @@\n pen.Down()%0A%09\n-p\n+P\n en.Goto(400,\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-10_22-51-44",
+            "content": "@@ -18,62 +18,692 @@\n ort \n+(%0A%09\n %22fmt%22%0A\n-%0Afunc main() %7B%0A    pen := NewPen(500, 500)%0A%0A    \n+%09%22math/rand%22%0A)%0A%0Afunc randInt(min, max int) int %7B%0A%09return min + rand.Intn(max-min+1)%0A%7D%0Afunc arvore(pen *Pen, comprimento float64, angulo, reducao, minComprimento float64) %7B%0A%09if comprimento %3C minComprimento %7B%0A%09%09return%0A%09%7D%0A%09pen.Walk(comprimento)%0A%09x,y := pen.x, pen.y%0A%09ang := pen.angle%0A%09pen.Left(angulo)%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minComprimento)%0A%09pen.Up()%0A%09pen.Goto(x, y)%0A%09pen.SetHeading(ang)%0A%09pen.Down()%0A%0A%09pen.Right(angulo)%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minComprimento)%0A%09pen.Up()%0A%09pen.Goto(x, y)%0A%09pen.SetHeading(ang)%0A%09pen.Down()%0A%09%0A%7D%0A%0A%0A%0A%0Afunc main() %7B%0A%09pen := NewPen(500, 500)   // cria um canvas de 500 de largura por 500 de altura%0A%09\n pen.\n@@ -721,24 +721,10 @@\n , 0)\n-   // preto%0A    \n+%0A%09\n pen.\n@@ -740,16 +740,12 @@\n dth(\n-3)%0A%0A    \n+2)%0A%09\n pen.\n@@ -749,20 +749,17 @@\n en.Up()%0A\n-    \n+%09\n pen.SetP\n@@ -775,17 +775,15 @@\n 50, \n-450)%0A    \n+500) %0A%09\n pen.\n@@ -800,123 +800,193 @@\n (90)\n-    // aponta para cima%0A    pen.Down()%0A%0A    pen.Walk(100)         // desenha uma linha vertical de 100 pixels%0A%0A    \n+%0A%09pen.Down()%0A%09pen.Goto(400, 750)%0A%0A%09comprimento := 100.0%0A%09angulo := 35.0   %0A%09reducao := 0.68%0A%09minComprimento := 5.0%0A%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minComprimento)%0A%0A%09\n pen.\n@@ -1009,12 +1009,9 @@\n g%22)%0A\n-    \n+%09\n fmt.\n@@ -1027,23 +1027,34 @@\n PNG \n-salvo: tree.png\n+file created successfully.\n %22)%0A%7D\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-06-10_22-53-27",
+            "content": "@@ -30,256 +30,105 @@\n unc \n-desenhaGalhos(pen *Pen, comprimento, angulo float64) %7B%0A    if comprimento %3C 5 %7B%0A        return%0A    %7D%0A    pen.Walk(comprimento)%0A    x, y := pen.x, pen.y%0A    ang := pen.angle%0A%0A    // Galho esquerdo%0A    pen.Left(angulo)%0A    pen.Walk(comprimento * 0.7)\n+main() %7B%0A    pen := NewPen(500, 500)%0A%0A    pen.SetRGB(0, 0, 0)   // preto%0A    pen.SetLineWidth(3)%0A\n %0A   \n@@ -141,33 +141,44 @@\n p()%0A    pen.\n-Goto(x, y\n+SetPosition(250, 450\n )%0A    pen.Se\n@@ -190,382 +190,120 @@\n ing(\n-ang)%0A    pen.Down()%0A%0A    // Galho direito%0A    pen.Right(angulo)%0A    pen.Walk(comprimento * 0.7)%0A    pen.Up()%0A    pen.Goto(x, y)%0A    pen.SetHeading(ang)%0A    pen.Down()%0A%7D%0A%0Afunc main() %7B%0A    pen := NewPen(800, 8\n+90)    // aponta para cima%0A    pen.Down()%0A%0A    pen.Walk(1\n 00)\n-%0A\n     \n-pen.SetRGB(0, 0, 0)%0A    pen.SetLineWidth(2)%0A%0A    pen.Up()%0A    pen.SetPosition(400, 750)%0A    pen.SetHeading(90)%0A    pen.Down()%0A%0A    desenhaGalhos(pen, 100, 35)\n+     // desenha uma linha vertical de 100 pixels\n %0A%0A  \n@@ -354,13 +354,23 @@\n NG salvo\n+: tree.png\n %22)%0A%7D%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-06-10_22-54-33",
+            "content": "@@ -26,22 +26,29 @@\n %22%0A%0Afunc \n-arvore\n+desenhaGalhos\n (pen *Pe\n@@ -73,33 +73,8 @@\n gulo\n-, reducao, minComprimento\n  flo\n@@ -81,17 +81,20 @@\n at64) %7B%0A\n-%09\n+    \n if compr\n@@ -106,35 +106,31 @@\n o %3C \n-minComprimento %7B%0A%09%09\n+5 %7B%0A        \n return%0A\n-%09\n+    \n %7D%0A  \n@@ -208,80 +208,61 @@\n     \n-pen.Left(angulo)%0A%09arvore(pen, comprimento*reducao, angulo, reducao, minC\n+// Galho esquerdo%0A    pen.Left(angulo)%0A    pen.Walk(c\n ompr\n@@ -259,32 +259,38 @@\n Walk(comprimento\n+ * 0.7\n )%0A    pen.Up()%0A \n@@ -347,16 +347,37 @@\n Down()%0A%0A\n+    // Galho direito%0A\n     pen.\n@@ -394,63 +394,22 @@\n lo)%0A\n-%09arvore(pen, comprimento*reducao, angulo, reducao, minC\n+    pen.Walk(c\n ompr\n@@ -410,24 +410,30 @@\n (comprimento\n+ * 0.7\n )%0A    pen.Up\n@@ -673,191 +673,38 @@\n ()%0A%0A\n-%09comprimentoInicial := 100.0%0A%09anguloDosGalhos := 35.0%0A%09fatorReducao := 0.68%0A%09comprimentoMinimo := 5.0%0A%09arvore(pen, comprimentoInicial, anguloDosGalhos, fatorReducao, comprimentoMinimo\n+    desenhaGalhos(pen, 100, 35\n )%0A%0A \n@@ -734,9 +734,12 @@\n g%22)%0A\n-%09\n+    \n fmt.\n@@ -755,45 +755,13 @@\n PNG \n-gerado com sucesso! Arquivo: tree.png\n+salvo\n %22)%0A%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-06-10_22-58-42",
+            "content": "@@ -629,17 +629,17 @@\n neWidth(\n-5\n+2\n )%0A%0A    p\n@@ -699,10 +699,9 @@\n ing(\n-20\n+9\n 0)%0A \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-10_22-59-34",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc arvore(pen *Pen, comprimento, angulo, reducao, minComprimento float64) {\n\tif comprimento < minComprimento {\n\t\treturn\n\t}\n    pen.Walk(comprimento)\n    x, y := pen.x, pen.y\n    ang := pen.angle\n\n    pen.Left(angulo)\n\tarvore(pen, comprimento*reducao, angulo, reducao, minComprimento)\n    pen.Up()\n    pen.Goto(x, y)\n    pen.SetHeading(ang)\n    pen.Down()\n\n    pen.Right(angulo)\n\tarvore(pen, comprimento*reducao, angulo, reducao, minComprimento)\n    pen.Up()\n    pen.Goto(x, y)\n    pen.SetHeading(ang)\n    pen.Down()\n}\n\nfunc main() {\n    pen := NewPen(800, 800)\n    pen.SetRGB(0, 0, 0)\n    pen.SetLineWidth(5)\n\n    pen.Up()\n    pen.SetPosition(400, 750)\n    pen.SetHeading(200)\n    pen.Down()\n\n\tcomprimentoInicial := 100.0\n\tanguloDosGalhos := 35.0\n\tfatorReducao := 0.68\n\tcomprimentoMinimo := 5.0\n\tarvore(pen, comprimentoInicial, anguloDosGalhos, fatorReducao, comprimentoMinimo)\n\n    pen.SavePNG(\"tree.png\")\n\tfmt.Println(\"PNG gerado com sucesso! Arquivo: tree.png\")\n}\n",
+            "lines": "46"
+        }
+    ]
+}
