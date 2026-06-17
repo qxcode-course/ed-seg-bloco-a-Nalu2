@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-15_22-45-52",
+            "content": "@@ -124,212 +124,27 @@\n  %7B%0A%09\n-low, high := 0, len(slice)-1%0A%09for low %3C high %7B%0A%09%09mid := (low + high) / 2%0A%09%09if slice%5Bmid%5D == value %7B%0A%09%09%09return true, mid%0A%09%09%7D else if slice%5Bmid%5D %3C value %7B%0A%09%09%09low = mid +1%0A%09%09%7D else %7B%0A%09%09%09high = mid - 1%0A%09%09%7D%0A%09%7D\n+_, _ = slice, value\n %0A%09re\n@@ -159,11 +159,9 @@\n se, \n-low\n+0\n %0A%7D%0A%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-06-17_00-34-57",
+            "content": "@@ -421,165 +421,50 @@\n ()%0A%09\n-line := scanner.Text()%0A%09line = strings.TrimSpace(line)%0A%09line = strings.Trimleft(line, %22%5B%22)%0A%09line = strings.Trimright(line, %22%5D%22)%0A%09parts := strings.Fields(line\n+parts := strings.Split(scanner.Text(), %22 %22\n )%0A%09s\n@@ -510,48 +510,28 @@\n arts\n- %7B%0A%09%09if _, elem === %22%22 %7B%0A%09%09%09continue%0A%09%09%7D\n+%5B1 : len(parts)-1%5D %7B\n %0A%09%09v\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-17_00-39-30",
+            "content": "@@ -159,17 +159,16 @@\n or low %3C\n-=\n  high %7B%0A\n@@ -496,9 +496,9 @@\n Trim\n-L\n+l\n eft(\n@@ -532,9 +532,9 @@\n Trim\n-R\n+r\n ight\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-17_00-41-16",
+            "content": "@@ -146,16 +146,18 @@\n n(slice)\n+-1\n %0A%09for lo\n@@ -159,16 +159,17 @@\n or low %3C\n+=\n  high %7B%0A\n@@ -315,16 +315,19 @@\n h = mid \n+- 1\n %0A%09%09%7D%0A%09%7D%0A\n@@ -640,16 +640,17 @@\n  elem ==\n+=\n  %22%22 %7B%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-17_00-43-05",
+            "content": "@@ -285,17 +285,16 @@\n  = mid +\n- \n 1%0A%09%09%7D el\n@@ -307,24 +307,25 @@\n %09%09high = mid\n+ \n %0A%09%09%7D%0A%09%7D%0A%09ret\n@@ -623,16 +623,19 @@\n s %7B%0A%09%09if\n+ _,\n  elem ==\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-06-17_00-43-22",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\tlow, high := 0, len(slice)\n\tfor low < high {\n\t\tmid := (low + high) / 2\n\t\tif slice[mid] == value {\n\t\t\treturn true, mid\n\t\t} else if slice[mid] < value {\n\t\t\tlow = mid + 1\n\t\t} else {\n\t\t\thigh = mid\n\t\t}\n\t}\n\treturn false, low\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tline = strings.TrimSpace(line)\n\tline = strings.TrimLeft(line, \"[\")\n\tline = strings.TrimRight(line, \"]\")\n\tparts := strings.Fields(line)\n\tslice := []int{}\n\tfor _, elem := range parts {\n\t\tif elem == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "50"
+        }
+    ]
+}

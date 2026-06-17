@@ -19,19 +19,19 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@vector
-- ed@list
-- ed@linear
 - ed@backtrack
 - ed@map_set
-- ed@rec
 - ed@tree
+- ed@vector
+- ed@linear
+- ed@list
+- ed@rec
 flags:
-  inbox: inbox
+  inbox: all
   panel: graph
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@eh_primo
-selected_index: 3
+selected: ed@multiset
+selected_index: 39

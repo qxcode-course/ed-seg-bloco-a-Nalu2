@@ -1,0 +1,16 @@
+2026-06-15 21:46:50, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-06-15 22:20:37, EXEC, v:1, k:ed@setbuild, mode:FULL, size:169, fail:COMP
+2026-06-15 22:20:33, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-06-15 22:32:19, EXEC, v:1, k:ed@setbuild, mode:FULL, size:182, fail:COMP
+2026-06-15 22:41:47, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-06-15 22:41:52, EXEC, v:1, k:ed@setbuild, mode:FREE, size:173
+2026-06-15 22:44:51, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-06-15 22:44:57, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100
+2026-06-15 22:44:59, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-06-15 22:45:03, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-06-15 22:45:18, SELF, v:1, k:ed@setbuild, self:1, rate:100, study:200, concept:1
+2026-06-15 22:45:20, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-06-15 22:45:39, MOVE, v:1, k:ed@bettersearch, mode:DOWN
+2026-06-15 22:45:45, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-15 22:45:52, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:18, size:33
+2026-06-15 22:45:53, MOVE, v:1, k:ed@bettersearch, mode:BACK

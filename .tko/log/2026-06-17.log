@@ -1,0 +1,34 @@
+2026-06-17 00:27:43, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:34:48, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:34:53, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:34:57, EXEC, v:1, k:ed@bettersearch, mode:FREE, size:43
+2026-06-17 00:35:06, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:36:29, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:36:36, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:36
+2026-06-17 00:36:26, MOVE, v:1, k:ed@bettersearch, mode:EDIT
+2026-06-17 00:39:30, EXEC, v:1, k:ed@bettersearch, mode:FULL, size:50, fail:COMP
+2026-06-17 00:41:16, EXEC, v:1, k:ed@bettersearch, mode:FULL, size:50, fail:COMP
+2026-06-17 00:41:19, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:41:20, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:41:13, MOVE, v:1, k:ed@bettersearch, mode:EDIT
+2026-06-17 00:43:05, EXEC, v:1, k:ed@bettersearch, mode:FULL, size:50, fail:COMP
+2026-06-17 00:43:22, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:100, size:50
+2026-06-17 00:43:25, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:43:37, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:43:48, SELF, v:1, k:ed@bettersearch, self:1, rate:100, study:25
+2026-06-17 00:43:50, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:43:52, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-06-17 00:43:53, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:100
+2026-06-17 00:43:54, MOVE, v:1, k:ed@bettersearch, mode:BACK
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:DOWN
+2026-06-17 00:44:04, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-17 00:44:05, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-06-17 00:44:11, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-06-17 00:43:18, MOVE, v:1, k:ed@bettersearch, mode:EDIT
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-17 00:43:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-06-17 00:52:12, EXEC, v:1, k:ed@multiset, mode:FREE, size:106
+2026-06-17 00:52:15, MOVE, v:1, k:ed@multiset, mode:BACK
