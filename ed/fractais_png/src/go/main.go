@@ -2,44 +2,44 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func circulo(pen *Pen, x, y, raio float64, nivel int) {
+func pentatree(pen *Pen, x, y, comprimento, reducao float64, nivel int) {
 	if nivel == 0 {
 		return
 	}
-    pen.Up()
-    pen.SetPosition(x, y)
-	pen.Down()
-    pen.DrawCircle(raio)
-	novoRaio := raio / 3.0
-	distanciaCentros := raio
 
-	for i := 0; i < 6; i++{
-		angulo := float64(i) * 60.0
-		rad := angulo * math.Pi / 180.0
-		novoX := x + distanciaCentros*math.Cos(rad)
-		novoY := y + distanciaCentros*math.Sin(rad)
-		circulo(pen, novoX, novoY, novoRaio, nivel-1)
+	for i := 0; i < 6; i++ {
+		angulo := float64(i)*72.0 - 90.0
+		
+		pen.Up()
+		pen.SetPosition(x, y)
+		pen.SetHeading(angulo)
+		pen.Down()
+
+		pen.Walk(comprimento)
+
+		novoX := pen.x
+		novoY := pen.y
+
+		pentatree(pen, novoX, novoY, comprimento*reducao, reducao, nivel-1)
 	}
 }
 
 func main() {
-    largura, altura := 800, 800
+	largura, altura := 700, 700
 	pen := NewPen(largura, altura)
-	pen.dc.SetRGB(0, 0, 0) 
+
+	pen.dc.SetRGB(0, 0, 0)
 	pen.dc.Clear()
 
-	pen.SetRGB(255, 255, 255) 
-	pen.SetLineWidth(1)
+	pen.SetRGB(255, 255, 255)
+	pen.SetLineWidth(0.6)
 
 	centroX := float64(largura) / 2.0
 	centroY := float64(altura) / 2.0
-	raioInicial := 250.0 
-	niveis := 6       
-	circulo(pen, centroX, centroY, raioInicial, niveis)
 
-    pen.SavePNG("circulos.png")
-	fmt.Println("PNG gerado com sucesso!")
+	pentatree(pen, centroX, centroY, 165.0, 0.38, 5)
+	pen.SavePNG("pentatree.png")
+	fmt.Println("Pentatree'pentatree.png'!")
 }

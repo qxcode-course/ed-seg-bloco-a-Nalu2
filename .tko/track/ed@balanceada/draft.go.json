@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_16-21-56",
+            "content": "@@ -758,26 +758,24 @@\n rintln(%22\n-b\n+B\n alance\n-ado\n+d\n %22)%0A    %7D\n@@ -807,22 +807,20 @@\n ln(%22\n-nao b\n+Not B\n alance\n-ado\n+d\n %22)%0A \n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-07-02_16-23-46",
+            "content": "package main\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc balanced (s string) bool {\n    stack := []rune{}\n    for _, char := range s {\n        switch char {\n        case '(', '[':\n            stack = append(stack, char)\n        case ')':\n            if len(stack) == 0 || stack[len(stack)-1] != '(' {\n                return false\n            }\n            stack = stack[:len(stack)-1]\n        case ']':\n            if len(stack) == 0 || stack[len(stack)-1] != '[' {\n                return false\n            }\n            stack = stack[:len(stack)-1]\n        }\n    }\n    return len(stack) == 0\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n    expr := scanner.Text()\n    if balanced(expr) {\n        fmt.Println(\"balanceado\")\n    } else {\n        fmt.Println(\"nao balanceado\")\n    }\n}\n\n",
+            "lines": "41"
+        }
+    ]
+}

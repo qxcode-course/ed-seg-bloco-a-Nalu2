@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-26_23-08-16",
+            "content": "package main\n\nimport (\n\t\"math\"\n)\n\nfunc desenhaArvore(p *Pen, x, y, length, angle float64, depth int) {\n\tif depth == 0 || length < 2 {\n\t\treturn\n\t}\n\n\tp.Up()\n\tp.SetPosition(x, y)\n\tp.SetHeading(angle)\n\tp.Down()\n\tp.Walk(length)\n\n\trad := angle * math.Pi / 180\n\tfimX := x + length*math.Cos(rad)\n\tfimY := y - length*math.Sin(rad) \n\n\tanguloRamo := 30.0\n\tnovoCompr := length * 0.7\n\n\tdesenhaArvore(p, fimX, fimY, novoCompr, angle+anguloRamo, depth-1)\n\n\tdesenhaArvore(p, fimX, fimY, novoCompr, angle-anguloRamo, depth-1)\n}\n\nfunc main() {\n\tlargura, altura := 800, 800\n\tpen := NewPen(largura, altura)\n\tpen.SetRGB(0, 0, 0) \n\tpen.SetLineWidth(2)\n\tbaseX := float64(largura) / 2\n\tbaseY := float64(altura) * 0.9 \n\tdesenhaArvore(pen, baseX, baseY, 150, 90, 8)\n\tpen.SavePNG(\"arvore.png\")\n}\n",
+            "lines": "39"
+        }
+    ]
+}

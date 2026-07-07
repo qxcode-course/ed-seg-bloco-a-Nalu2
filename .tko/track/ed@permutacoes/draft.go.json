@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_23-17-42",
+            "content": "@@ -382,374 +382,4 @@\n   %7D%0A\n-        for i := 0; i %3Cn; i++ %7B%0A            if !used%5Bi%5D %7B%0A                used%5Bi%5D = true%0A                curr%5Bpos%5D = chars%5Bi%5D%0A                backtrack(pos + 1)%0A                used%5Bi%5D = false%0A            %7D%0A        %7D%0A    %7D%0A    %0A    backtrack(0)%0A    return result%0A%7D%0A%0Afunc main() %7B%0A    scanner := bufio.NewScanner(os.Stdin)%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-07-02_23-29-09",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -68,341 +68,584 @@\n unc \n-next\n Permut\n-ation(s %5B%5Drune) bool %7B%0A%09n := len(s)%0A%09i := n - 2%0A%09for i %3E= 0 && s%5Bi%5D %3E= s%5Bi+1%5D %7B%0A%09%09i--%0A%09%7D%0A%09if i %3C 0 %7B%0A%09%09return false%0A%09%7D%0A%09j := n - 1%0A%09for s%5Bj%5D %3C= s%5Bi%5D %7B%0A%09%09j--%0A%09%7D%0A%09s%5Bi%5D, s%5Bj%5D = s%5Bj%5D, s%5Bi%5D%0A%09// reverse suffix%0A%09left, right := i+1, n-1%0A%09for left %3C right %7B%0A%09%09s%5Bleft%5D, s%5Bright%5D = s%5Bright%5D, s%5Bleft%5D%0A%09%09left++%0A%09%09right--%0A%09%7D%0A%09\n+e(s string) %5B%5Dstring %7B%0A    chars := %5B%5Drune(s)%0A    n := len(chars)%0A    used := make(%5B%5Dbool, n)%0A    curr := make(%5B%5Drune, n)%0A    var result %5B%5Dstring%0A%0A    var backtrack func(int)%0A    backtrack = func(pos int) %7B%0A        if pos == n %7B%0A            result = append(result, string(curr))%0A            return%0A        %7D%0A        for i := 0; i %3Cn; i++ %7B%0A            if !used%5Bi%5D %7B%0A                used%5Bi%5D = true%0A                curr%5Bpos%5D = chars%5Bi%5D%0A                backtrack(pos + 1)%0A                used%5Bi%5D = false%0A            %7D%0A        %7D%0A    %7D%0A    %0A    backtrack(0)%0A    \n return \n-true\n+result\n %0A%7D%0A%0A\n@@ -658,17 +658,20 @@\n ain() %7B%0A\n-%09\n+    \n scanner \n@@ -700,17 +700,20 @@\n .Stdin)%0A\n-%09\n+    \n if !scan\n@@ -729,240 +729,27 @@\n ) %7B%0A\n-%09%09return%0A%09%7D%0A%09s := strings.TrimSpace(scanner.Text())%0A%09chars := %5B%5Drune(s)%0A%09sort.Slice(chars, func(i, j int) bool %7B return chars%5Bi%5D %3C chars%5Bj%5D %7D)%0A%0A%09fmt.Println(string(chars))%0A%09for nextPermutation(chars) %7B%0A%09%09fmt.Println(string(chars))%0A%09\n+        return%0A    \n %7D%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-07-02_23-30-32",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"sort\"\n\t\"strings\"\n)\n\nfunc nextPermutation(s []rune) bool {\n\tn := len(s)\n\ti := n - 2\n\tfor i >= 0 && s[i] >= s[i+1] {\n\t\ti--\n\t}\n\tif i < 0 {\n\t\treturn false\n\t}\n\tj := n - 1\n\tfor s[j] <= s[i] {\n\t\tj--\n\t}\n\ts[i], s[j] = s[j], s[i]\n\t// reverse suffix\n\tleft, right := i+1, n-1\n\tfor left < right {\n\t\ts[left], s[right] = s[right], s[left]\n\t\tleft++\n\t\tright--\n\t}\n\treturn true\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\ts := strings.TrimSpace(scanner.Text())\n\tchars := []rune(s)\n\tsort.Slice(chars, func(i, j int) bool { return chars[i] < chars[j] })\n\n\tfmt.Println(string(chars))\n\tfor nextPermutation(chars) {\n\t\tfmt.Println(string(chars))\n\t}\n}\n",
+            "lines": "48"
+        }
+    ]
+}

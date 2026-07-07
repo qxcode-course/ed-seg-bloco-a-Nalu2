@@ -19,19 +19,20 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@backtrack
-- ed@map_set
-- ed@tree
-- ed@vector
-- ed@linear
-- ed@list
 - ed@rec
+- ed@dfs
+- ed@tree
+- ed@bfs
+- ed@linear
+- ed@backtrack
 flags:
-  inbox: all
+  inbox: inbox
   panel: graph
-  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: false
+  interval_seconds: null
 lang: go
-selected: ed@multiset
-selected_index: 39
+selected: ed@chaves
+selected_index: 14

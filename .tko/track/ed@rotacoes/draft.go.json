@@ -2,8 +2,18 @@
     "patches": [
         {
             "label": "2026-06-09_15-23-54",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -41,469 +41,35 @@\n     \n-scanner := bufio.NewScanner(os.Stdin)%0A    parts := strings.Fields(scanner.Text())%0A    t, _ := strconv.Atoi(parts%5B0%5D)%0A    r, _ := strconv.Atoi(parts%5B1%5D)%0A    scanner.Scan()%0A    vec := strings.Fields(scanner.Text())%0A    if t == 0 %7B%0A        fmt.Println(%22%5B %5D%22)%0A        return%0A    %7D%0A    start := (t - (r %25 t)) %25 t%0A    res := make(%5B%5Dstring, t)%0A    for i := 0; i %3C t; i++%7B%0A        res%5Bi%5D = vec%5B(start + i) %25 t%5D%0A    %7D%0A    fmt.Printf(%22%5B %25s %5D%5Cn%22, strings.Join(res, %22 %22 ) )%0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-07-01_11-08-16",
+            "content": "@@ -10,64 +10,20 @@\n ain%0A\n-%0A\n import \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A%09%22strings%22%0A)%0A\n+%22fmt%22\n %0Afun\n@@ -33,17 +33,20 @@\n ain() %7B%0A\n-%09\n+    \n scanner \n@@ -79,43 +79,12 @@\n in)%0A\n-%09if !scanner.Scan() %7B%0A%09%09return%0A%09%7D%0A%09\n+    \n part\n@@ -119,17 +119,20 @@\n Text())%0A\n-%09\n+    \n t, _ := \n@@ -154,17 +154,20 @@\n rts%5B0%5D)%0A\n-%09\n+    \n r, _ := \n@@ -193,14 +193,12 @@\n 1%5D)%0A\n-%0A%09if !\n+    \n scan\n@@ -211,24 +211,13 @@\n an()\n- %7B%0A%09%09return%0A%09%7D%0A%09\n+%0A    \n vec \n@@ -250,18 +250,20 @@\n Text())%0A\n-%0A%09\n+    \n if t == \n@@ -266,18 +266,24 @@\n  == 0 %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -297,22 +297,33 @@\n %5D%22)%0A\n-%09%09return%0A%09%7D%0A%0A%09\n+        return%0A    %7D%0A    \n star\n@@ -345,17 +345,20 @@\n t)) %25 t%0A\n-%09\n+    \n res := m\n@@ -374,17 +374,20 @@\n ing, t)%0A\n-%09\n+    \n for i :=\n@@ -404,13 +404,18 @@\n  i++\n- \n %7B%0A\n-%09%09\n+        \n res%5B\n@@ -433,19 +433,29 @@\n tart\n-+i)%25t%5D%0A%09%7D%0A%09\n+ + i) %25 t%5D%0A    %7D%0A    \n fmt.\n@@ -494,13 +494,16 @@\n res, %22 %22\n-))\n+ ) )%0A\n %0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-07-01_11-16-48",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tparts := strings.Fields(scanner.Text())\n\tt, _ := strconv.Atoi(parts[0])\n\tr, _ := strconv.Atoi(parts[1])\n\n\tif !scanner.Scan() {\n\t\treturn\n\t}\n\tvec := strings.Fields(scanner.Text())\n\n\tif t == 0 {\n\t\tfmt.Println(\"[ ]\")\n\t\treturn\n\t}\n\n\tstart := (t - (r % t)) % t\n\tres := make([]string, t)\n\tfor i := 0; i < t; i++ {\n\t\tres[i] = vec[(start+i)%t]\n\t}\n\tfmt.Printf(\"[ %s ]\\n\", strings.Join(res, \" \"))\n}\n",
+            "lines": "36"
         }
     ]
 }

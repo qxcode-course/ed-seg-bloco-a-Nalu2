@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_01-09-37",
+            "content": "@@ -115,292 +115,37 @@\n  %7B%0A%09\n-low, high := 0, len(slice)-1%0A%09for low %3C= high %7B%0A%09%09mid := (low + high) / 2%0A%09%09if slice%5Bmid%5D == value %7B%0A%09%09%09last := mid%0A%09%09%09for last+1 %3C len(slice) && slice%5Blast+1%5D == value %7B%0A%09%09%09%09last++%0A%09%09%09%7D%0A%09%09%09return last%0A%09%09%7D else if slice%5Bmid%5D %3C value %7B%0A%09%09%09low = mid + 1%0A%09%09%7D else %7B%0A%09%09%09high = mid - 1%0A%09%09%7D\n+_, _ = slice, value%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-06-27_01-25-26",
+            "content": "@@ -185,17 +185,16 @@\n gh) / 2%0A\n-%0A\n %09%09if sli\n@@ -400,23 +400,8 @@\n %09%09%7D%0A\n-%09%7D%0A%09return low%0A\n %7D%0A%0Af\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-27_01-28-11",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tlow, high := 0, len(slice)-1\n\tfor low <= high {\n\t\tmid := (low + high) / 2\n\n\t\tif slice[mid] == value {\n\t\t\tlast := mid\n\t\t\tfor last+1 < len(slice) && slice[last+1] == value {\n\t\t\t\tlast++\n\t\t\t}\n\t\t\treturn last\n\t\t} else if slice[mid] < value {\n\t\t\tlow = mid + 1\n\t\t} else {\n\t\t\thigh = mid - 1\n\t\t}\n\t}\n\treturn low\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "45"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_12-34-43",
+            "content": "@@ -1,9 +1,8 @@\n-%0A\n package \n@@ -17,917 +17,59 @@\n ort \n-(%0A%09%22bufio%22%0A%09%22fmt%22%0A%09%22os%22%0A%09%22strconv%22%0A)%0A%0Afunc Valid(seq %5B%5Drune, idx int, l int, d rune) bool %7B%0A    start:= idx - l%0A    if start %3C 0 %7B%0A        start = 0%0A    %7D%0A    for i := start; i %3C idx; i++ %7B%0A        if seq%5Bi%5D == d %7B%0A            return false%0A        %7D%0A    %7D%0A    end := idx + l%0A    if end %3E len(seq) %7B%0A        end = len(seq)%0A    %7D%0A    for i := idx + 1; i %3C= end; i++ %7B%0A        if seq%5Bi%5D == d %7B%0A            return false%0A        %7D%0A    %7D%0A    return true%0A%7D%0A%0Afunc solve(seq %5B%5Drune, idx int, l int, d rune) bool %7B%0A    if idx == len(seq) %7B%0A        return true%0A    %7D%0A    if seq%5Bidx%5D != '.' %7B%0A        return solve(seq, idx+1, l)%0A    %7D%0A    for d := 0; d %3C= l; d++ %7B%0A        charr := rune('0' + d); %0A        if Valid(seq, idx, l, charr) %7B%0A            seq%5Bidx%5D = charr%0A            if solve(seq, idx + 1, l) %7B%0A                return true%0A            %7D%0A            seq%5Bidx%5D = '.'%0A        %7D%0A    %7D%0A    return false%0A%7D%0A%0Afunc main() %7B\n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)%0A%7D\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-02_14-54-50",
+            "content": "@@ -931,297 +931,4 @@\n ) %7B%0A\n-    scanner := bufio.NewScanner(os.Stdin)%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    line := scanner.Text()%0A    seq := %5B%5Drune(line)%0A    if !scanner.Scan() %7B%0A        return%0A    %7D%0A    l, _ := strconv.Atoi(scanner.Text())%0A    if solve(seq, 0, l) %7B%0A        fmt.Println(string(seq))%0A    %7D%0A%7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-02_15-01-59",
+            "content": "@@ -301,17 +301,16 @@\n if end %3E\n-=\n  len(seq\n@@ -339,12 +339,8 @@\n seq)\n- - 1\n %0A   \n@@ -380,18 +380,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n if seq%5Bi\n@@ -409,11 +409,20 @@\n d %7B%0A\n-%09%09%09\n+            \n retu\n@@ -434,23 +434,39 @@\n lse%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n return \n+true\n %0A%7D%0A%0A\n@@ -502,16 +502,24 @@\n t, l int\n+, d rune\n ) bool %7B\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_15-08-27",
+            "content": "@@ -435,20 +435,16 @@\n %09return \n-true\n %0A%7D%0A%0Afunc\n@@ -866,24 +866,29 @@\n %0A    return \n+false\n %0A%7D%0A%0Afunc mai\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_15-08-54",
+            "content": "@@ -874,21 +874,16 @@\n  return \n-false\n %0A%7D%0A%0Afunc\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-07-02_15-09-47",
+            "content": "\npackage main\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n)\n\nfunc Valid(seq []rune, idx int, l int, d rune) bool {\n    start:= idx - l\n    if start < 0 {\n        start = 0\n    }\n    for i := start; i < idx; i++ {\n        if seq[i] == d {\n            return false\n        }\n    }\n    end := idx + l\n    if end >= len(seq) {\n        end = len(seq) - 1\n    }\n    for i := idx + 1; i <= end; i++ {\n\t\tif seq[i] == d {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}\n\nfunc solve(seq []rune, idx int, l int) bool {\n    if idx == len(seq) {\n        return true\n    }\n    if seq[idx] != '.' {\n        return solve(seq, idx+1, l)\n    }\n    for d := 0; d <= l; d++ {\n        charr := rune('0' + d); \n        if Valid(seq, idx, l, charr) {\n            seq[idx] = charr\n            if solve(seq, idx + 1, l) {\n                return true\n            }\n            seq[idx] = '.'\n        }\n    }\n    return false\n}\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n    line := scanner.Text()\n    seq := []rune(line)\n    if !scanner.Scan() {\n        return\n    }\n    l, _ := strconv.Atoi(scanner.Text())\n    if solve(seq, 0, l) {\n        fmt.Println(string(seq))\n    }\n}\n",
+            "lines": "66"
+        }
+    ]
+}

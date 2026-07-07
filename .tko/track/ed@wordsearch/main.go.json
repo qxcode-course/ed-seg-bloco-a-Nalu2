@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-01_16-05-31",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\tif len(grid) == 0 || len(grid[0]) == 0 {\n\t\treturn false\n\t}\n\tm := len(grid)\n\tn := len(grid[0])\n\n\tfor r := 0; r < m; r++ {\n\t\tfor c := 0; c < n; c++ {\n\t\t\tif dfs(grid, r, c, word, 0) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc dfs(grid [][]byte, r, c int, word string, index int) bool {\n\tif index == len(word) {\n\t\treturn true\n\t}\n\n\tif r < 0 || r >= len(grid) || c < 0 || c >= len(grid[0]) || grid[r][c] != word[index] {\n\t\treturn false\n\t}\n\ttemp := grid[r][c]\n\tgrid[r][c] = 0 \n\n\tfound := dfs(grid, r+1, c, word, index+1) ||\n\t\tdfs(grid, r-1, c, word, index+1) ||\n\t\tdfs(grid, r, c+1, word, index+1) ||\n\t\tdfs(grid, r, c-1, word, index+1)\n\t\n\tgrid[r][c] = temp\n\treturn found\n}\n\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "63"
+        }
+    ]
+}

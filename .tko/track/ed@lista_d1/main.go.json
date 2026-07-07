@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_21-44-54",
+            "content": "@@ -1551,16 +1551,71 @@\n can() %7B%0A\n+%09%09%0A%09%09fmt.Print(%22$%22)%0A%09%09if !scanner.Scan() %7B%0A%09%09%09break%0A%09%09%7D\n %0A%09%09line \n@@ -1632,16 +1632,36 @@\n .Text()%0A\n+%09%09fmt.Println(line)%0A\n %09%09args :\n@@ -1727,34 +1727,8 @@\n %09%7D%0A%0A\n-%09%09fmt.Println(%22$%22 + line)%0A\n %09%09cm\n@@ -1770,24 +1770,27 @@\n  %22show%22:%0A%09%09%09\n+// \n fmt.Println(\n@@ -1816,24 +1816,27 @@\n  %22size%22:%0A%09%09%09\n+// \n fmt.Println(\n@@ -1865,24 +1865,27 @@\n h_back%22:%0A%09%09%09\n+// \n for _, v := \n@@ -1904,16 +1904,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09num, _ \n@@ -1929,32 +1929,34 @@\n conv.Atoi(v)%0A%09%09%09\n+//\n  %09ll.PushBack(nu\n@@ -1961,16 +1961,18 @@\n num)%0A%09%09%09\n+//\n  %7D%0A%09%09cas\n@@ -1990,16 +1990,19 @@\n nt%22:%0A%09%09%09\n+// \n for _, v\n@@ -2025,16 +2025,18 @@\n :%5D %7B%0A%09%09%09\n+//\n  %09num, _\n@@ -2058,16 +2058,18 @@\n i(v)%0A%09%09%09\n+//\n  %09ll.Pus\n@@ -2083,16 +2083,19 @@\n num)%0A%09%09%09\n+// \n %7D%0A%09%09case\n@@ -2106,24 +2106,27 @@\n p_back%22:%0A%09%09%09\n+// \n ll.PopBack()\n@@ -2149,16 +2149,19 @@\n nt%22:%0A%09%09%09\n+// \n ll.PopFr\n@@ -2185,16 +2185,19 @@\n ar%22:%0A%09%09%09\n+// \n ll.Clear\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-23_21-46-52",
+            "content": "@@ -841,26 +841,25 @@\n oot.next%0A%09ne\n-xt\n+w\n ToFirst = fi\n@@ -1324,17 +1324,17 @@\n oa(curr.\n-v\n+V\n alue))%0A%09\n@@ -1458,106 +1458,8 @@\n %0A%7D%0A%0A\n-func (ll *LList) Clear() %7B%0A    ll.root.next = ll.root%0A    ll.root.prev = ll.root%0A    ll.size = 0%0A%7D\n %0A%0Afu\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-06-23_21-48-28",
+            "content": "@@ -855,17 +855,16 @@\n ToFirst \n-:\n = firstN\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-06-23_21-50-57",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tvalue int\n\tnext  *Node\n\tprev  *Node\n}\n\ntype LList struct {\n\troot *Node\n\tsize int\n}\n\nfunc NewLList() *LList {\n\troot := &Node{}\n\troot.next = root\n\troot.prev = root\n\treturn &LList{root: root, size: 0}\n}\n\nfunc (ll *LList) Size() int {\n\treturn ll.size\n}\n\nfunc (ll *LList) PushFront(value int){\n\tnewNode := &Node{value: value}\n\tfirstNode := ll.root.next\n\tnewNode.next = firstNode\n\tnewNode.prev = ll.root\n\n\tll.root.next = newNode\n\tfirstNode.prev = newNode\n\tll.size++\n}\n\nfunc (ll *LList) PushBack(value int){\n\tnewNode := &Node{value: value}\n\tlastNode := ll.root.prev\n\tnewNode.next = ll.root\n\tnewNode.prev = lastNode\n\n\tlastNode.next = newNode\n\tll.root.prev = newNode\n\tll.size++\n}\n\nfunc (ll *LList) PopFront(){\n\tif ll.size == 0 {\n\t\treturn\n\t}\n\tfirstNode := ll.root.next\n\tnextToFirst := firstNode.next\n\n\tll.root.next = nextToFirst\n\tnextToFirst.prev = ll.root\n\n\tll.size--\n}\n\nfunc (ll *LList) PopBack() {\n\tif ll.size == 0 {\n\t\treturn\n\t}\n\tlastNode := ll.root.prev\n\tprevToLast := lastNode.prev\n\n\tprevToLast.next = ll.root\n\tll.root.prev = prevToLast\n\n\tll.size--\n}\n\nfunc (ll *LList) String() string {\n\tif ll.size == 0 {\n\t\treturn \"[]\"\n\t}\n\tvar sb strings.Builder\n\tsb.WriteString(\"[\")\n\tcurr := ll.root.next\n\tfor curr != ll.root {\n\t\tsb.WriteString(strconv.Itoa(curr.value))\n\t\tif curr.next != ll.root {\n\t\t\tsb.WriteString(\", \")\n\t\t}\n\t\tcurr = curr.next\n\t}\n\tsb.WriteString(\"]\")\n\treturn sb.String()\n}\n\nfunc (ll *LList) Clear() {\n    ll.root.next = ll.root\n    ll.root.prev = ll.root\n    ll.size = 0\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n \tll := NewLList()\n\n\tfor scanner.Scan() {\n\n\t\tline := scanner.Text()\n\t\targs := strings.Fields(line)\n\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tfmt.Println(\"$\" + line)\n\t\tcmd := args[0]\n\n\t\tswitch cmd {\n\t\tcase \"show\":\n\t\t\tfmt.Println(ll.String())\n\t\tcase \"size\":\n\t\t\tfmt.Println(ll.Size())\n\t\tcase \"push_back\":\n\t\t\tfor _, v := range args[1:] {\n\t\t\t\tnum, _ := strconv.Atoi(v)\n\t\t\t \tll.PushBack(num)\n\t\t\t }\n\t\tcase \"push_front\":\n\t\t\tfor _, v := range args[1:] {\n\t\t\t \tnum, _ := strconv.Atoi(v)\n\t\t\t \tll.PushFront(num)\n\t\t\t}\n\t\tcase \"pop_back\":\n\t\t\tll.PopBack()\n\t\tcase \"pop_front\":\n\t\t\tll.PopFront()\n\t\tcase \"clear\":\n\t\t\tll.Clear()\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "148"
+        }
+    ]
+}

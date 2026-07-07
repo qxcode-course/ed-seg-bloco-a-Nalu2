@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-02_21-02-58",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n)\n\n// func (q *Queue[T]) Enqueue(value T)\n// func (q *Queue[T]) Dequeue() (T, bool)\n// func (q *Queue[T]) Peek() (T, bool)\n// func (q *Queue[T]) Size() int\n// func (q *Queue[T]) IsEmpty() bool\n// func (q *Queue[T]) Clear()\n\n\ntype Node[T any] struct {\n\tValue T\n\tnext  *Node[T]\n}\n\ntype Queue[T any] struct {\n\thead *Node[T]\n\ttail *Node[T]\n\tsize int\n}\n\nfunc NewQueue[T any]() *Queue[T] {\n\treturn &Queue[T]{}\n}\n\nfunc (q *Queue[T]) String() string {\n\tresult := \"[\"\n\tfor n := q.head; n != nil; n = n.next {\n\t\tif n != q.head {\n\t\t\tresult += \", \"\n\t\t}\n\t\tresult += fmt.Sprintf(\"%v\", n.Value)\n\t}\n\treturn result + \"]\"\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tqueue := NewQueue[int]()\n\n\tfor {\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\tfmt.Println(\"$\" + line)\n\t\targs := strings.Fields(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tswitch args[0] {\n\t\tcase \"end\":\n\t\t\tbreak\n\t\tcase \"show\":\n\t\t\tfmt.Println(queue)\n\t\tcase \"push\":\n\t\t\t// for _, arg := range args[1:] {\n\t\t\t// \tvalue, _ := strconv.Atoi(arg)\n\t\t\t// \tqueue.Enqueue(value)\n\t\t\t// }\n\t\tcase \"pop\":\n\t\t\t// if _, ok := queue.Dequeue(); !ok {\n\t\t\t// \tfmt.Println(\"falha: fila vazia\")\n\t\t\t// }\n\t\tcase \"peek\":\n\t\t\t// if value, ok := queue.Peek(); ok {\n\t\t\t// \tfmt.Println(value)\n\t\t\t// } else {\n\t\t\t// \tfmt.Println(\"falha: fila vazia\")\n\t\t\t// }\n\t\tdefault:\n\t\t\tfmt.Println(\"Unknown command:\", args[0])\n\t\t}\n\t}\n}\n",
+            "lines": "82"
+        }
+    ]
+}
