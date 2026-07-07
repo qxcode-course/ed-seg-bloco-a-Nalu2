@@ -9,31 +9,6 @@ import (
 
 type Pos struct{ l, c int }
 
-type Stack[T any] struct {
-	data []T
-}
-
-func NewStack[T any]() *Stack[T] {
-	return &Stack[T]{data: []T{}}
-}
-
-func (s *Stack[T]) Push(v T) {
-	s.data = append(s.data, v)
-}
-
-func (s *Stack[T]) Empty() bool {
-	return len(s.data) == 0
-}
-
-func (s *Stack[T]) Pop() T {
-	if s.Empty() {
-		panic("empty stack")
-	}
-	v := s.data[len(s.data)-1]
-	s.data = s.data[:len(s.data)-1]
-	return v
-}
-
 func burnTrees(grid [][]rune, l, c int) {
 	nl := len(grid)
 	if nl == 0 {
@@ -47,7 +22,7 @@ func burnTrees(grid [][]rune, l, c int) {
 	stack := NewStack[Pos]()
 	stack.Push(Pos{l, c})
 
-	for !stack.Empty() {
+	for !stack.IsEmpty() { 
 		p := stack.Pop()
 		if p.l < 0 || p.l >= nl || p.c < 0 || p.c >= nc {
 			continue
@@ -66,13 +41,11 @@ func burnTrees(grid [][]rune, l, c int) {
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-
 	if !scanner.Scan() {
 		return
 	}
 	var nl, nc, lfire, cfire int
 	fmt.Sscan(scanner.Text(), &nl, &nc, &lfire, &cfire)
-
 	grid := make([][]rune, nl)
 	for i := 0; i < nl; i++ {
 		if !scanner.Scan() {

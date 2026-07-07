@@ -26,13 +26,13 @@ expanded:
 - ed@linear
 - ed@backtrack
 flags:
-  inbox: inbox
-  panel: graph
+  inbox: all
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: false
   interval_seconds: null
 lang: go
-selected: ed@chaves
-selected_index: 14
+selected: ed@dfs
+selected_index: 59

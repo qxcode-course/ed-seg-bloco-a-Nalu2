@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_22-39-44",
+            "content": "@@ -99,17 +99,16 @@\n  int%0A%7D%0A%0A\n-%0A\n func mai\n@@ -121,480 +121,7 @@\n     \n-scanner := bufio.NewScanner(os.Stdin)%0A    if scanner.Scan() %7B%0A        return%0A    %7D%0A%0A    var n int%0A    fmt.Sscanf(scanner.Text(), &n)%0A    postos := make(%5B%5DPosto, n)%0A    tGasolina, tDistancia := 0, 0%0A%0A    for i := 0; i %3C n; i++ %7B%0A        if !scanner.Scan() %7B%0A            break%0A        %7D%0A        var gas, dist int%0A        fmt.Sscanf(scanner.Text(), &gas, &dist)%0A        postos%5Bi%5D = Posto%7Bgasolina: gas, distanicia: dist%7D%0A        tGasolina += gas%0A        tDistancia += dist%0A    \n+%0A\n %7D%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-07-06_22-55-06",
+            "content": "@@ -83,24 +83,25 @@\n t%0A    distan\n+i\n cia int%0A%7D%0A%0A%0A\n@@ -524,16 +524,17 @@\n , distan\n+i\n cia: dis\n@@ -598,322 +598,4 @@\n   %7D%0A\n-%0A    if tGasolina %3C tDistancia %7B%0A        fmt.Println(-1)%0A        return%0A    %7D%0A%0A    start := 0%0A    currGas := 0%0A%0A    for i := 0; i %3C n; i++ %7B%0A        currGas += postos%5Bi%5D.gasolina - postos%5Bi%5D.distancia%0A        if currGas %3C 0 %7B%0A            start = i + 1%0A            currGas = 0%0A        %7D%0A    %7D%0A%0A    fmt.Println(start)%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-07-06_23-04-04",
+            "content": "@@ -158,25 +158,24 @@\n din)%0A    if \n-!\n scanner.Scan\n@@ -249,14 +249,8 @@\n t(),\n- %22%25d%22,\n  &n)\n@@ -466,17 +466,8 @@\n t(),\n- %22%25d %25d%22,\n  &ga\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-06_23-05-53",
+            "content": "package main\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Posto struct {\n    gasolina int\n    distancia int\n}\n\n\nfunc main() {\n    scanner := bufio.NewScanner(os.Stdin)\n    if !scanner.Scan() {\n        return\n    }\n\n    var n int\n    fmt.Sscanf(scanner.Text(), \"%d\", &n)\n    postos := make([]Posto, n)\n    tGasolina, tDistancia := 0, 0\n\n    for i := 0; i < n; i++ {\n        if !scanner.Scan() {\n            break\n        }\n        var gas, dist int\n        fmt.Sscanf(scanner.Text(), \"%d %d\", &gas, &dist)\n        postos[i] = Posto{gasolina: gas, distancia: dist}\n        tGasolina += gas\n        tDistancia += dist\n    }\n\n    if tGasolina < tDistancia {\n        fmt.Println(-1)\n        return\n    }\n\n    start := 0\n    currGas := 0\n\n    for i := 0; i < n; i++ {\n        currGas += postos[i].gasolina - postos[i].distancia\n        if currGas < 0 {\n            start = i + 1\n            currGas = 0\n        }\n    }\n\n    fmt.Println(start)\n}\n",
+            "lines": "53"
+        }
+    ]
+}

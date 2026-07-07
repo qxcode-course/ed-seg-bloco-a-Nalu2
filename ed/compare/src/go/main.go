@@ -15,30 +15,13 @@ type Node struct {
 	Right *Node
 }
 
-// MyShow imprime a árvore binária de forma formatada.
-func MyShow(node *Node, nivel int) {
-	if node == nil {
-		return
-	}
-	temF := node.Left != nil || node.Right != nil
-	if temF {
-		if node.Left != nil {
-			MyShow(node.Left, nivel+1)
-		}else {
-			fmt.Println(strings.Repeat("....", nivel+1) + "#")	
-		}
-	}
-	fmt.Println(strings.Repeat("....", nivel) + strconv.Itoa(node.Value))
-	if temF {
-		if node.Right != nil {
-			MyShow(node.Right, nivel+1)
-		}else {
-			fmt.Println(strings.Repeat("....", nivel+1) + "#")
-		}
-	}
+func compare(a, b *Node) int {
+	_, _ = a, b
+	
+	return 0
 }
 
-// -----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------
 func BShow(node *Node, history string) {
 	if node != nil && (node.Left != nil || node.Right != nil) {
 		BShow(node.Left, history+"l")
@@ -84,7 +67,18 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	parts := strings.Split(scanner.Text(), " ")
-	root := create(&parts)
-	BShow(root, "") // Chama a função de impressão formatada
-	MyShow(root, 0) // Chama a função de impressão personalizada
+	a := create(&parts)
+	BShow(a, "")
+	scanner.Scan()
+	parts = strings.Split(scanner.Text(), " ")
+	b := create(&parts)
+	BShow(b, "")
+	result := compare(a, b)
+	if result == 0 {
+		fmt.Println("iguais")
+	} else if result < 0 {
+		fmt.Println("menor")
+	} else {
+		fmt.Println("maior")
+	}
 }

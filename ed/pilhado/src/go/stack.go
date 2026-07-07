@@ -4,52 +4,19 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
-
-type Pos struct {
-	l, c int
-}
-
-type Stack[T any] struct {
-	data []T
-}
-
-func NewStack[T any]() *Stack[T] {
-	return &Stack[T]{data: []T{}}
-}
-
-func (s *Stack[T]) Push(v T) {
-	s.data = append(s.data, v)
-}
-
-func (s *Stack[T]) Top() T {
-	if len(s.data) == 0 {
-		panic("empty stack")
-	}
-	return s.data[len(s.data)-1]
-}
-
-func (s *Stack[T]) IsEmpty() bool {
-	return len(s.data) == 0
-}
-
-func (s *Stack[T]) Pop() T {
-	if s.IsEmpty() {
-		panic("empty stack")
-	}
-	v := s.data[len(s.data)-1]
-	s.data = s.data[:len(s.data)-1]
-	return v
-}
-
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	if !scanner.Scan() {
 		return
 	}
+	header := strings.TrimSpace(strings.TrimPrefix(scanner.Text(), "\ufeff"))
 	var n, m int
-	fmt.Sscanf(scanner.Text(), "%d %d", &n, &m)
+	if _, err := fmt.Sscanf(header, "%d %d", &n, &m); err != nil || n <= 0 || m <= 0 {
+		return
+	}
 
 	maze := make([][]rune, n)
 	var inicio, fim Pos
@@ -88,6 +55,7 @@ func main() {
 	caminho := NewStack[Pos]()
 	caminho.Push(inicio)
 	visitado[inicio.l][inicio.c] = true
+
 	dirs := [][2]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
 
 	for !caminho.IsEmpty() {
@@ -96,6 +64,7 @@ func main() {
 		if atual == fim {
 			break
 		}
+
 		validos := []Pos{}
 		for _, d := range dirs {
 			linha := atual.l + d[0]
@@ -120,12 +89,14 @@ func main() {
 			caminho.Pop()
 		}
 	}
-
 	if !caminho.IsEmpty() {
 		for _, p := range caminho.data {
-			maze[p.l][p.c] = '.'
+			if maze[p.l][p.c] != '#' {
+				maze[p.l][p.c] = '.'
+			}
 		}
 	}
+
 	for i := 0; i < n; i++ {
 		fmt.Println(string(maze[i]))
 	}

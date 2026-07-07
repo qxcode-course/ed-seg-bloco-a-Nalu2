@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-06_21-19-58",
+            "content": "@@ -512,293 +512,29 @@\n  %7B%0A%09\n-if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%09elem := (*parts)%5B0%5D%0A%09*parts = (*parts)%5B1:%5D%0A%0A%09if elem == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09value, err := strconv.Atoi(elem)%0A%09if err != nil %7B%0A%09%09return nil%0A%09%7D%0A%0A%09node := &Node%7BValue: value%7D%0A%09node.Left = create(parts)%0A%09node.Right = create(parts)%0A%0A%09return node%0A%09\n+_ = parts%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-06_21-44-50",
+            "content": "@@ -53,19 +53,8 @@\n gs%22%0A\n-%09%22strconv%22%0A\n )%0A%0A/\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-06_21-45-01",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strings\"\n\t\"strconv\"\n)\n\n// Node representa um n\u00f3 na \u00e1rvore bin\u00e1ria.\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// create constr\u00f3i uma \u00e1rvore bin\u00e1ria a partir de uma lista de strings.\n// Consuma os elementos da lista sempre do in\u00edcio.\n// Voc\u00ea pode obter o primeiro elemento com 'elem := (*parts)[0]'\n// Voc\u00ea pode fazer um \"push_front\" no array usando '*parts = (*parts)[1:]\n// Se o elemento for \"#\", significa que o n\u00f3 \u00e9 nulo.\nfunc create(parts *[]string) *Node {\n\tif len(*parts) == 0 {\n\t\treturn nil\n\t}\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\n\tvalue, err := strconv.Atoi(elem)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\n\treturn node\n\t\n}\n\n// BShow \u00e9 uma fun\u00e7\u00e3o auxiliar para imprimir a \u00e1rvore bin\u00e1ria.\n// Primeira invoca\u00e7\u00e3o de ser com history como uma string vazia.\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tparts := strings.Split(line, \" \")\n\troot := create(&parts)\n\tBShow(root, \"\")\n}\n",
+            "lines": "85"
+        }
+    ]
+}
