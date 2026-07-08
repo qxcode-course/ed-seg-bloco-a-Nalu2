@@ -2,8 +2,58 @@
     "patches": [
         {
             "label": "2026-07-06_23-08-04",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -10,242 +10,66 @@\n ain%0A\n-%0A\n import \n-(%0A    %22bufio%22%0A    %22fmt%22%0A    %22os%22%0A    %22strconv%22%0A    %22strings%22%0A)%0A%0A%0Atype Node struct %7B%0A    Valie int%0A    Left *Node%0A    Right *Node%0A%7D%0A%0Afunc find(node *Node, value int) *Node%7B%0A    if node == nil%7B%0A        return nil%0A    %7D%0A%0A    %0A    \n+%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-07-07_16-22-22",
+            "content": "@@ -10,66 +10,242 @@\n ain%0A\n+%0A\n import \n-%22fmt%22%0Afunc main() %7B%0A    fmt.Println(%22Hello, World!%22)\n+(%0A    %22bufio%22%0A    %22fmt%22%0A    %22os%22%0A    %22strconv%22%0A    %22strings%22%0A)%0A%0A%0Atype Node struct %7B%0A    Valie int%0A    Left *Node%0A    Right *Node%0A%7D%0A%0Afunc find(node *Node, value int) *Node%7B%0A    if node == nil%7B%0A        return nil%0A    %7D%0A%0A    %0A    \n %0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-07-07_16-23-30",
+            "content": "@@ -17,866 +17,59 @@\n ort \n-(%0A    \n %22fmt%22%0A\n-)%0A%0A\n func \n-precedente(op string) int%7B%0A    switch op%7B%0A    case %22+, %22-%22:%0A        return 1%0A    %7D%0A    case %22*%22, %22/%22:%0A        return 2%0A    %7D%0A    case %22%5E%22:%0A        return 3%0A    %7D%0A    return 0%0A%7D%0A%0Afunc isOperator (token string) boll %7B%0A    return token == %22+%22 %7C%7C token == %22-%22 %7C%7C token == %22*%22 %7C%7C token == %22/%22 %7C%7C token == %22%5E%22%0A%7D%0A%0Afunc shutingYard(input string) string %7B%0A    var output, stack %5B%5Dstring%0A%0A    for _, token :=range tokens %7B%0A        if token == %22%22%7B%0A            continue %0A        %7D%0A%0A        if isOperator(token) %7B%0A            for len(stack) %3E 0 && precedente (stack%5Blen(stack)-1%5D) %3E= presedente(token)%7B%0A                output = append(output, stack%5Blen(stack)-1%5D)%0A                stack = stack%5B:len(stack)-1%5D%0A            %7D%0A            stack = append(stack, token)%0A        %7D else %7B%0A            output= append(output, token)%0A        %7D%0A    %7D%0A%0A    for len%0A\n+main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-07_16-37-34",
+            "content": "@@ -110,16 +110,22 @@\n eturn 1%0A\n+    %7D%0A\n     case\n@@ -152,16 +152,22 @@\n eturn 2%0A\n+    %7D%0A\n     case\n@@ -212,13 +212,8 @@\n n 0%0A\n-    %0A\n %7D%0A%0Af\n@@ -875,155 +875,8 @@\n  len\n-(stack) %3E 0 %7B%0A        output = append(output, stack%5Blen(stack)-1%5D)%0A        stack = stack%5B:len(stack)-1%5D%0A    %7D%0A%0A    return strings.Join(output. %22 %22)\n %0A%0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-07-07_17-26-23",
+            "content": "@@ -19,22 +19,8 @@\n t (%0A\n-    %22strings%22%0A\n     \n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-07-07_17-26-44",
+            "content": "@@ -251,17 +251,17 @@\n ring) bo\n-o\n+l\n l %7B%0A    \n@@ -352,17 +352,17 @@\n %7D%0A%0Afunc \n-S\n+s\n hutingYa\n@@ -395,75 +395,19 @@\n     \n-tokens := strings.Split(input, %22 %22)%0A    var output %5B%5Dstring%0A    var\n+var output,\n  sta\n@@ -438,17 +438,16 @@\n token :=\n- \n range to\n@@ -610,25 +610,25 @@\n )-1%5D) %3E= pre\n-c\n+s\n edente(token\n@@ -1019,17 +1019,17 @@\n n(output\n-,\n+.\n  %22 %22)%0A%0A%7D\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-07-07_17-30-54",
+            "content": "@@ -100,17 +100,16 @@\n  case %22+\n-%22\n , %22-%22:%0A \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-07_17-32-40",
+            "content": "@@ -29,16 +29,26 @@\n trings%22%0A\n+    %22fmt%22%0A\n )%0A%0Afunc \n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-07_17-32-49",
+            "content": "@@ -33,18 +33,8 @@\n gs%22%0A\n-    %22fmt%22%0A\n )%0A%0Af\n@@ -1081,181 +1081,4 @@\n %0A%0A%7D%0A\n-%0A%0Afunc main()%7B%0A    scanner:= bufio.NewScanner(os.Stdin)%0A    if scanner.Scan()%7B%0A        input := scanner.Text()%0A        res :=ShutingYard(input)%0A        fmt.Println(res)%0A    %7D%0A%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-07-07_17-35-53",
+            "content": "@@ -43,29 +43,8 @@\n mt%22%0A\n-    %22os%22%0A    %22bufio%22%0A\n )%0A%0Af\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-07_17-37-07",
+            "content": "package main\nimport (\n    \"strings\"\n    \"fmt\"\n    \"os\"\n    \"bufio\"\n)\n\nfunc precedente(op string) int{\n    switch op{\n    case \"+\", \"-\":\n        return 1\n    case \"*\", \"/\":\n        return 2\n    case \"^\":\n        return 3\n    }\n    return 0\n    \n}\n\nfunc isOperator (token string) bool {\n    return token == \"+\" || token == \"-\" || token == \"*\" || token == \"/\" || token == \"^\"\n}\n\nfunc ShutingYard(input string) string {\n    tokens := strings.Split(input, \" \")\n    var output []string\n    var stack []string\n\n    for _, token := range tokens {\n        if token == \"\"{\n            continue \n        }\n\n        if isOperator(token) {\n            for len(stack) > 0 && precedente (stack[len(stack)-1]) >= precedente(token){\n                output = append(output, stack[len(stack)-1])\n                stack = stack[:len(stack)-1]\n            }\n            stack = append(stack, token)\n        } else {\n            output= append(output, token)\n        }\n    }\n\n    for len(stack) > 0 {\n        output = append(output, stack[len(stack)-1])\n        stack = stack[:len(stack)-1]\n    }\n\n    return strings.Join(output, \" \")\n\n}\n\n\nfunc main(){\n    scanner:= bufio.NewScanner(os.Stdin)\n    if scanner.Scan(){\n        input := scanner.Text()\n        res :=ShutingYard(input)\n        fmt.Println(res)\n    }\n}\n",
+            "lines": "64"
         }
     ]
 }

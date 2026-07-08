@@ -1,0 +1,36 @@
+2026-07-07 16:00:47, MOVE, v:1, k:ed@polonesa, mode:PICK
+2026-07-07 16:16:02, MOVE, v:1, k:ed@polonesa, mode:BACK
+2026-07-07 16:19:16, MOVE, v:1, k:ed@polonesa, mode:PICK
+2026-07-07 16:22:22, EXEC, v:1, k:ed@polonesa, mode:FULL, size:25, fail:COMP
+2026-07-07 16:22:23, MOVE, v:1, k:ed@polonesa, mode:BACK
+2026-07-07 16:22:25, MOVE, v:1, k:ed@polonesa, mode:PICK
+2026-07-07 16:23:30, EXEC, v:1, k:ed@polonesa, mode:FULL, rate:0, size:5
+2026-07-07 16:23:27, MOVE, v:1, k:ed@polonesa, mode:EDIT
+2026-07-07 16:37:34, EXEC, v:1, k:ed@polonesa, mode:FULL, size:45, fail:COMP
+2026-07-07 16:38:14, MOVE, v:1, k:ed@polonesa, mode:BACK
+2026-07-07 17:24:09, MOVE, v:1, k:ed@polonesa, mode:PICK
+2026-07-07 17:26:23, EXEC, v:1, k:ed@polonesa, mode:FULL, size:49, fail:COMP
+2026-07-07 17:26:44, EXEC, v:1, k:ed@polonesa, mode:FULL, size:50, fail:COMP
+2026-07-07 17:26:42, MOVE, v:1, k:ed@polonesa, mode:EDIT
+2026-07-07 17:30:55, EXEC, v:1, k:ed@polonesa, mode:FULL, size:52, fail:COMP
+2026-07-07 17:32:40, EXEC, v:1, k:ed@polonesa, mode:FULL, size:52, fail:COMP
+2026-07-07 17:32:49, EXEC, v:1, k:ed@polonesa, mode:FULL, size:51, fail:COMP
+2026-07-07 17:32:46, MOVE, v:1, k:ed@polonesa, mode:EDIT
+2026-07-07 17:35:53, EXEC, v:1, k:ed@polonesa, mode:FULL, size:62, fail:COMP
+2026-07-07 17:37:07, EXEC, v:1, k:ed@polonesa, mode:FULL, rate:100, size:64
+2026-07-07 17:37:25, SELF, v:1, k:ed@polonesa, self:1, rate:100, study:45
+2026-07-07 17:37:28, MOVE, v:1, k:ed@polonesa, mode:BACK
+2026-07-07 17:37:04, MOVE, v:1, k:ed@polonesa, mode:EDIT
+2026-07-07 17:40:20, MOVE, v:1, k:ed@vetequals, mode:DOWN
+2026-07-07 17:40:23, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-07-07 17:40:20, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-07-07 17:40:20, MOVE, v:1, k:ed@vetequals, mode:EDIT
+2026-07-07 17:48:58, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-07-07 20:59:30, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-07-07 20:59:48, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:49
+2026-07-07 21:03:09, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-07-07 21:18:16, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-07-07 21:21:20, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:100, size:54
+2026-07-07 21:21:36, SELF, v:1, k:ed@vetequals, self:1, rate:100, study:15
+2026-07-07 21:21:37, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-07-07 21:21:16, MOVE, v:1, k:ed@vetequals, mode:EDIT
