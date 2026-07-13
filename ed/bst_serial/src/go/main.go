@@ -34,14 +34,22 @@ func BstInsert(values []int) *Node {
 	return root
 }
 
-
-
+func buildSerial(node *Node, res *[]string){
+	if node == nil {
+		*res = append(*res, "#")
+		return
+	}
+	*res = append(*res, strconv.Itoa(node.Value))
+	buildSerial(node.Left, res)
+	buildSerial(node.Right, res)
+	
+}
 // Dica: crie um vetor compartilhado e vá preenchendo conforme anda na recursão
 // Depois use o strings.Join para gerar o serial
 func Serialize(root *Node) string {
-	// TODO
-	_ = root
-	return ""
+	var res []string
+	buildSerial(root, &res)
+	return strings.Join(res, " ")
 }
 
 // -----------------------------------------------------------------------------------

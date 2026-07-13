@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_22-09-06",
+            "content": "@@ -45,227 +45,8 @@\n %0A)%0A%0A\n-func dsf(grid %5B%5D%5B%5Dbyte, r, c int)%7B%0A%09if r%3C0 %7C%7C r %3E= len(grid) %7C%7C c %3C0 %7C%7C c%3E= len(grid%5B0%5D) %7C%7C grid%5Br%5D%5Bc%5D == '0'%7B%0A%09%09return%0A%09%7D%0A%09grid%5Br%5D%5Bc%5D ='0'%0A%09dsf(grid, r+1, c)%0A%09dsf(grid, r-1, c)%0A%09dsf(grid, r, c+1)%0A%09dsf(grid, r, c-1)%0A%7D%0A%0A\n // N\n@@ -224,17 +224,16 @@\n %09return \n-0\n %0A%7D%0A%0A// N\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-12_22-14-06",
+            "content": "@@ -425,192 +425,31 @@\n  %7B%0A%09\n-if len(grid) == 0%7B%0A%09%09return 0%0A%09%7D%0A%09count := 0%0A%09for r := 0; r%3C len(grid); r ++%7B%0A%09%09for c :=0; c %3C len(grid%5B0%5D); c++ %7B%0A%09%09%09if grid%5Br%5D%5Bc%5D == '1'%7B%0A%09%09%09%09count ++%0A%09%09%09%09dsf(grid,r,c)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+//%0A%09_ := grid%0A%09return 0\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-07-12_22-21-15",
+            "content": "@@ -609,20 +609,8 @@\n %09%7D%0A%09\n-return count\n %0A%7D%0A%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-07-12_22-22-47",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc dsf(grid [][]byte, r, c int){\n\tif r<0 || r >= len(grid) || c <0 || c>= len(grid[0]) || grid[r][c] == '0'{\n\t\treturn\n\t}\n\tgrid[r][c] ='0'\n\tdsf(grid, r+1, c)\n\tdsf(grid, r-1, c)\n\tdsf(grid, r, c+1)\n\tdsf(grid, r, c-1)\n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o numIslands\n// Ela \u00e9 a fun\u00e7\u00e3o que ser\u00e1 chamada no LeetCode para resolver o problema\nfunc numIslands(grid [][]byte) int {\n\tif len(grid) == 0{\n\t\treturn 0\n\t}\n\tcount := 0\n\tfor r := 0; r< len(grid); r ++{\n\t\tfor c :=0; c < len(grid[0]); c++ {\n\t\t\tif grid[r][c] == '1'{\n\t\t\t\tcount ++\n\t\t\t\tdsf(grid,r,c)\n\t\t\t}\n\t\t}\n\t}\n\treturn count\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tvar nl, nc int\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tgrid := make([][]byte, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\tgrid[i] = []byte(scanner.Text())\n\t}\n\tresult := numIslands(grid)\n\tfmt.Println(result)\n}\n",
+            "lines": "52"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_22-24-00",
+            "content": "@@ -45,727 +45,90 @@\n %0A)%0A%0A\n-func dsf(board%5B%5D%5B%5Dbyte, r, c int)%7B%0A%09if r%3C0 %7C%7C r %3E= len(board) %7C%7C c %3C0 %7C%7C c%3E= len(board%5B0%5D) %7C%7C board%5Br%5D%5Bc%5D == '0'%7B%0A%09%09return%0A%09%7D%0A%09board%5Br%5D%5Bc%5D ='0'%0A%09dsf(board, r+1, c)%0A%09dsf(board, r-1, c)%0A%09dsf(board, r, c+1)%0A%09dsf(board, r, c-1)%0A%7D%0A%0A// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve(board %5B%5D%5B%5Dbyte) %7B%0A%09if len(board) == 0 %7C%7C len(board%5B0%5D) == 0 %7B%0A%09%09return%0A%09%7D%0A%09nrows := len(board)%0A%09ncols := len(board%5B0%5D)%0A%0A%09for i :=0; i %3Cnrows; i++%7B%0A%09%09dsf(board, i, 0)%0A%09%09dsf(board, i, ncols-1)%0A%09%7D%0A%09for j :=0; j %3Cncols; j++%7B%0A%09%09dsf(board, 0, j)%0A%09%09dsf(board, nrows-1, j)%0A%09%7D%0A%09for i:=0; i %3Cnrows; i++ %7B%0A%09%09for j := 0; j%3Cncols; j++%7B%0A%09%09%09if board%5Bi%5D%5Bj%5D == 'O' %7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'X'%0A%09%09%09%7D else if board%5Bi%5D%5Bj%5D == 'E'%7B%0A%09%09%09%09board%5Bi%5D%5Bj%5D = 'O'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+// N%C3%83O ALTERE A ASSINATURA DA FUN%C3%87%C3%83O solve%0Afunc solve(board %5B%5D%5B%5Dbyte) %7B%0A%09_ = board\n %0A%7D%0A%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-07-12_22-34-05",
+            "content": "@@ -182,17 +182,17 @@\n r%5D%5Bc%5D ='\n-E\n+0\n '%0A%09dsf(b\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-12_22-36-40",
+            "content": "@@ -182,17 +182,17 @@\n r%5D%5Bc%5D ='\n-O\n+E\n '%0A%09dsf(b\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-12_22-37-37",
+            "content": "@@ -151,13 +151,13 @@\n %5Bc%5D \n-!= 'O\n+== '0\n '%7B%0A%09\n@@ -182,17 +182,17 @@\n r%5D%5Bc%5D ='\n-E\n+O\n '%0A%09dsf(b\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-12_22-38-21",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc dsf(board[][]byte, r, c int){\n\tif r<0 || r >= len(board) || c <0 || c>= len(board[0]) || board[r][c] != 'O'{\n\t\treturn\n\t}\n\tboard[r][c] ='E'\n\tdsf(board, r+1, c)\n\tdsf(board, r-1, c)\n\tdsf(board, r, c+1)\n\tdsf(board, r, c-1)\n}\n\n// N\u00c3O ALTERE A ASSINATURA DA FUN\u00c7\u00c3O solve\nfunc solve(board [][]byte) {\n\tif len(board) == 0 || len(board[0]) == 0 {\n\t\treturn\n\t}\n\tnrows := len(board)\n\tncols := len(board[0])\n\n\tfor i :=0; i <nrows; i++{\n\t\tdsf(board, i, 0)\n\t\tdsf(board, i, ncols-1)\n\t}\n\tfor j :=0; j <ncols; j++{\n\t\tdsf(board, 0, j)\n\t\tdsf(board, nrows-1, j)\n\t}\n\tfor i:=0; i <nrows; i++ {\n\t\tfor j := 0; j<ncols; j++{\n\t\t\tif board[i][j] == 'O' {\n\t\t\t\tboard[i][j] = 'X'\n\t\t\t} else if board[i][j] == 'E'{\n\t\t\t\tboard[i][j] = 'O'\n\t\t\t}\n\t\t}\n\t}\n}\n\n// N\u00c3O ALTERE A MAIN\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar nrows, ncols int\n\tfmt.Sscanf(scanner.Text(), \"%d %d\", &nrows, &ncols)\n\tboard := make([][]byte, nrows)\n\tfor i := 0; i < nrows; i++ {\n\t\tscanner.Scan()\n\t\tboard[i] = []byte(scanner.Text())\n\t}\n\tsolve(board)\n\tfor _, row := range board {\n\t\tfmt.Println(string(row))\n\t}\n}\n",
+            "lines": "62"
+        }
+    ]
+}

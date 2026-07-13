@@ -14,16 +14,56 @@ type Node struct {
 	Right *Node
 }
 
+func insert(node *Node, val int) *Node {
+	if node == nil {
+		return &Node{Value: val}
+	}
+	if val < node.Value{
+		node.Left = insert(node.Left, val)
+	} else if val > node.Value {
+		node.Right = insert(node.Right, val)
+	}
+	return node
+}
+
 func BstInsert(values []int) *Node {
-	// TODO
-	_ = values
-	return nil
+	var root *Node
+	for _, val := range values {
+		root = insert(root, val)
+	}
+	return root
+}
+
+func getMax(node *Node) *Node {
+	current := node
+	for current.Right != nil {
+		current = current.Right
+	}
+	return current
 }
 
 func BstRemove(node *Node, value int) *Node {
-	// TODO
-	_, _ = node, value
-	return nil
+	if node == nil {
+		return nil
+	} 
+	if value < node.Value {
+		node.Left = BstRemove(node.Left, value)
+	} else if value > node.Value {
+		node.Right = BstRemove(node.Right, value)
+	}else {
+		if node.Left == nil{
+			return node.Right
+		}
+		if node.Right == nil{
+			return node.Left
+		}
+		next := getMax(node.Left)
+		node.Value = next.Value
+		node.Left = BstRemove(node.Left, next.Value)
+	}
+	return node
+
+
 }
 
 // -----------------------------------------------------------------------------------
