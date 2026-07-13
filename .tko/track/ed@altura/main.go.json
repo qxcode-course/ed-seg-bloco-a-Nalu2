@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-12_15-28-25",
+            "content": "@@ -276,308 +276,85 @@\n und%0A\n-%0Atype Node struct %7B%0A%09Value int%0A%09Left *Node%0A%09Right *Node%0A%7D%0A%0Afunc find(node *Node, value int) *Node %7B%0A%09if node == nil %7B%0A%09%09return nil %0A%09%7D%0A%09if node.Value == value %7B%0A%09%09return node%0A%09%7D%0A%09leftResult != find(node.Left,\n+func find(node *Node, value int) *Node %7B%0A%09_, _ = node, \n  value\n-)\n %0A%09\n-if leftResult := nil %7B%0A%09%09return leftResult%0A%09%7D%0A%09return find(node.Right, value)%0A\n+return nil\n %0A%7D%0A%0A\n-%0A\n // n\n@@ -528,194 +528,26 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return 0 %0A%09%7D%0A%09leftHeight := getHeight(node.Left)%0A%09rightHeight := getHeight(node.Right)%0A%0A%09if leftHeight %3E rightHeight%7B%0A%09%09return leftHeight + 1%0A%09%7D%0A%09return rightHeight +1\n+_ = node%0A%09return 0\n %0A%7D%0A%0A\n@@ -738,73 +738,45 @@\n  %7B%0A%09\n-if node == nil %7B%0A%09%09return 0%0A%09%7D%0A%09if node.Value ==\n+_, _, _ = node, level,\n  value\n-%7B%0A%09\n+%0A\n %09return \n leve\n@@ -775,19 +775,9 @@\n urn \n-level%0A%09%7D%0A%09%0A\n+0\n %0A%7D%0A%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-07-12_15-47-12",
+            "content": "@@ -1204,153 +1204,8 @@\n %09%7D%0A%09\n-leftDepth :=calcNodeDepth(node.Left, level+1, value)%0A%09if leftDepth != 0 %7B%0A%09%09return leftDepth%0A%09%7D%0A%09return calcNodeDepth(node.Left, level+1, value)%0A\n %0A%0A%7D%0A\n",
+            "lines": "140"
+        },
+        {
+            "label": "2026-07-12_15-50-51",
+            "content": "@@ -503,17 +503,17 @@\n tResult \n-!\n+:\n = nil %7B%0A\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-07-12_15-51-41",
+            "content": "@@ -273,16 +273,74 @@\n  found%0A%0A\n+type Node struct %7B%0A%09Value int%0A%09Left *Node%0A%09Right *Node%0A%7D%0A%0A\n func fin\n@@ -462,17 +462,17 @@\n tResult \n-:\n+!\n = find(n\n@@ -1323,20 +1323,19 @@\n th(node.\n-Righ\n+Lef\n t, level\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-07-12_15-55-27",
+            "content": "@@ -2420,16 +2420,19 @@\n , %22%22)%0A%0A%09\n+// \n values :\n@@ -2458,16 +2458,19 @@\n (line)%0A%09\n+// \n for s :=\n@@ -2486,16 +2486,19 @@\n lues %7B%0A%09\n+// \n %09value, \n@@ -2519,16 +2519,19 @@\n toi(s)%0A%09\n+// \n %09node :=\n@@ -2550,16 +2550,19 @@\n value)%0A%09\n+// \n %09if node\n@@ -2568,24 +2568,27 @@\n e != nil %7B%0A%09\n+// \n %09%09fmt.Printf\n@@ -2671,16 +2671,19 @@\n alue))%0A%09\n+// \n %09%7D else \n@@ -2677,32 +2677,35 @@\n %0A%09// %09%7D else %7B%0A%09\n+// \n %09%09fmt.Println(%22-\n@@ -2709,16 +2709,22 @@\n (%22-1%22)%0A%09\n+// \n %09%7D%0A%09\n+// \n %7D%0A%7D%0A\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-07-12_15-56-29",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// Search node with value\n// Starts with node == root\n// Value is the value we are looking for\n// Returns the node with the value or nil if not found\n\nfunc find(node *Node, value int) *Node {\n\tif node == nil {\n\t\treturn nil \n\t}\n\tif node.Value == value {\n\t\treturn node\n\t}\n\tleftResult := find(node.Left, value)\n\tif leftResult != nil {\n\t\treturn leftResult\n\t}\n\treturn find(node.Right, value)\n\n}\n\n\n// node is the node we want to find the height of\n// the height of a node is the number of edges on the longest path from the node to a leaf\nfunc getHeight(node *Node) int {\n\tif node == nil {\n\t\treturn 0 \n\t}\n\tleftHeight := getHeight(node.Left)\n\trightHeight := getHeight(node.Right)\n\n\tif leftHeight > rightHeight{\n\t\treturn leftHeight + 1\n\t}\n\treturn rightHeight +1\n}\n\n// node is the root of the tree\n// level is the current level in the tree (1 for root)\n// value is the value we are looking for\nfunc calcNodeDepth(node *Node, level int, value int) int {\n\tif node == nil {\n\t\treturn 0\n\t}\n\tif node.Value == value{\n\t\treturn level\n\t}\n\tleftDepth :=calcNodeDepth(node.Left, level+1, value)\n\tif leftDepth != 0 {\n\t\treturn leftDepth\n\t}\n\treturn calcNodeDepth(node.Right, level+1, value)\n\n\n}\n\n// --------------------------------------------------------------------\n// Don't change from here\nfunc BShow(node *Node, heranca string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, heranca+\"l\")\n\t}\n\tfor i := 0; i < len(heranca)-1; i++ {\n\t\tif heranca[i] != heranca[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif heranca != \"\" {\n\t\tif heranca[len(heranca)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, heranca+\"r\")\n\t}\n}\n\nfunc create(parts *[]string) *Node {\n\telem := (*parts)[0]\n\t*parts = (*parts)[1:]\n\tif elem == \"#\" {\n\t\treturn nil\n\t}\n\tvalue, _ := strconv.Atoi(elem)\n\tnode := &Node{Value: value}\n\tnode.Left = create(parts)\n\tnode.Right = create(parts)\n\treturn node\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tscanner.Scan()\n\n\tline := scanner.Text()\n\tparts := strings.Split(line, \" \")\n\troot := create(&parts)\n\n\tscanner.Scan()\n\tline = scanner.Text()\n\tfmt.Println(\"Arvore:\")\n\tBShow(root, \"\")\n\n\tvalues := strings.FieldsSeq(line)\n\tfor s := range values {\n\t\tvalue, _ := strconv.Atoi(s)\n\t\tnode := find(root, value)\n\t\tif node != nil {\n\t\t\tfmt.Printf(\"Altura: %d, Profundidade: %d\\n\", getHeight(node), calcNodeDepth(root, 1, value))\n\t\t} else {\n\t\t\tfmt.Println(\"-1\")\n\t\t}\n\t}\n}\n",
+            "lines": "139"
+        }
+    ]
+}

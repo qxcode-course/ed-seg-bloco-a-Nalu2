@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-
 	"strconv"
 	"strings"
 )
@@ -16,9 +15,28 @@ type Node struct {
 }
 
 func compare(a, b *Node) int {
-	_, _ = a, b
-	
-	return 0
+	if a == nil && b == nil {
+		return 0
+	}
+	if a == nil && b != nil {
+		return -1
+	}
+	if a != nil && b == nil {
+		return 1
+	}
+	if a.Value < b.Value {
+		return -1
+	}
+	if a.Value > b.Value{
+		return 1
+	}
+
+	leftResult := compare(a.Left, b.Left)
+	if leftResult != 0 {
+		return leftResult
+	}
+	return compare(a.Right, b.Right)
+
 }
 
 // ----------------------------------------------------------------------

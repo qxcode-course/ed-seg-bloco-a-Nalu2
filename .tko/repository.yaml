@@ -19,17 +19,16 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@bfs
-- ed@tree
 - ed@dfs
+- ed@tree
 flags:
   inbox: all
-  panel: skills
+  panel: graph
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@backtrack
-selected_index: 6
+selected: ed@bst_serial
+selected_index: 17
